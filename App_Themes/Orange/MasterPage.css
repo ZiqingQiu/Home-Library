@@ -1,0 +1,104 @@
+﻿body {
+    background-size: contain auto;
+    background-image: url('../../css/images/background_pic.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+#allPage {
+    position: relative;
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000080;
+    opacity: 0.78;
+}
+
+
+#banner {
+    background-size: 980px 300px;
+    padding: 0px;
+    position: absolute;
+    width: 980px;
+    height: 250px;
+    z-index: 1;
+    background-image: url('../../../images/banner.jpg');
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+}
+
+.banner-head {
+    position: relative;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: 27px;
+    font-weight: bold;
+    font-variant: normal;
+    text-transform: capitalize;
+    top: 70px;
+    width: 350px;
+    margin-left: 60%;
+}
+
+#navigation {
+    position: absolute;
+    width: 980px;
+    height: 30px;
+    z-index: 10;
+    top: 250px;
+    background-color: #f56d14;
+}
+
+#navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%
+}
+
+#navigation li {
+    float: left;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: small;
+}
+
+#navigation li a {
+    display: inline-block;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 7px 28px 7px 28px;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: small;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+}
+
+    #navigation li a:hover {
+        background-color: #FFFFFF;
+        color: #282728;
+    }
+
+#content {
+    position: absolute;
+    width: 980px;
+    height: 600px;
+    z-index: 1;
+    top: 280px;
+    background-color:cornsilk;
+}
+
+#footer {
+    position: absolute;
+    width: 980px;
+    z-index: 2;
+    top: 880px;
+    text-align: center;
+    background-color: #f56d14;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-size: small;
+    color: #FFFFFF;
+}

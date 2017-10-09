@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>COMP229 Assignment 1</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Assignment1Form1" runat="server">
+    <div id="allPage">
+        <div id="banner">
+            <div id="bannerheader" class="banner-head">
+			    <p>
+                    Home Library Collection
+			        <br>
+			        Your Personal Library
+			    </p>
+		    </div>
+        </div>
+        <nav id="navigation" runat="server">
+            <asp:SiteMapDataSource ID="HomeLibrarySitemap" runat="server" ShowStartingNode="False" />
+            <asp:Menu ID="HomeLibrafyMenu" runat="server" DataSourceID="HomeLibrarySitemap">
+                <StaticItemTemplate>
+                    <%# Eval("Text") %>
+                </StaticItemTemplate>
+            </asp:Menu>
+        </nav>
+        <div id="content">           
+
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="footer">&copy;&nbsp;Copyright Ziqing(James) Qiu COMP 219 Assignment 1</div>
+    </div>
+    </form>
+</body>
+</html>
