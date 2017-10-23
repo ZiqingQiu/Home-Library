@@ -91,6 +91,16 @@
     background-color:cornsilk;
 }
 
+#IntroText {
+    position: relative;
+    top: 20px;
+    left: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: peru;
+}
+
 #footer {
     position: absolute;
     width: 980px;

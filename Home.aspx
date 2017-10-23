@@ -9,8 +9,6 @@
         <p>At the library, you can add a new book, view all the books, and search a book</p>
         <h1>Videos about the Library</h1>
         <iframe src="https://www.youtube.com/embed/fraBg8dIWDI?ecver=2" style="position:absolute;left:0" width="641" height="360" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    
+    </div>    
 </asp:Content>
 
