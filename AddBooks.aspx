@@ -28,6 +28,11 @@
         <%-- comments --%>
         <asp:Label ID="lblComments" runat="server" Text="Comments: "></asp:Label>
         <asp:TextBox ID="txtComments" runat="server" Columns="3" Rows="4" TextMode="MultiLine"></asp:TextBox>
+        <br />
+        <%-- button --%>
+        <asp:Button ID="btnSave" runat="server" Text="Save" />
+        <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="False" />
+
 
     </div>
 </asp:Content>
