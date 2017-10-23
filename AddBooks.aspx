@@ -15,6 +15,8 @@
         <%-- number of pages --%>
         <asp:Label ID="lblNumOfPages" runat="server" Text="Number Of Pages: "></asp:Label>
         <asp:TextBox ID="txtNumOfPages" runat="server" TextMode="Number"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="requireNumOfPages" runat="server" ErrorMessage="Page Number can not be empty" ControlToValidate="txtNumOfPages" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
+        <asp:CompareValidator ID="compareNumOfPages" runat="server" ErrorMessage="Page Number must be a positive integer" ControlToValidate="txtNumOfPages" Display="Dynamic" Operator="GreaterThan" Type="Integer" ValueToCompare="0" ForeColor="Red"></asp:CompareValidator>
         <br />
         <%-- whether landed to friend --%>
         <asp:Label ID="lblLandToFriend" runat="server" Text="Landed To Friend: "></asp:Label>
