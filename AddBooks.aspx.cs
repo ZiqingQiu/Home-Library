@@ -26,6 +26,8 @@ public partial class AddBooks : System.Web.UI.Page
     {
         if (Page.IsValid)
         {
+            //add book
+            AddBook();
             btnSave.Text = "Valid";
         }
         else
@@ -39,8 +41,12 @@ public partial class AddBooks : System.Web.UI.Page
         ClearUserInputControls();
     }
 
+    /// <summary>
+    ///This method is called when cancel button is fired, will clear the user input 
+    /// </summary>
     protected void ClearUserInputControls()
     {
+        /*
         //user control
         bi1.BookName = String.Empty;
         bi1.AuthorName = String.Empty;
@@ -51,5 +57,23 @@ public partial class AddBooks : System.Web.UI.Page
         rdoNotLanded.Checked = false;
         txtLandFriName.Text = String.Empty;
         txtComments.Text = String.Empty;
+        */
+        Response.Redirect("AddBooks.aspx");
     }
+
+    /// <summary>
+    /// This method will add book object into books collection
+    /// </summary>
+    protected void AddBook()
+    {
+        BookRepository books = Application["books"] as BookRepository;
+        if (null == books)
+        {
+            books = new BookRepository();
+            Application["books"] = books;
+        }
+
+        books.AddBook(new Book(bi1.BookName, bi1.AuthorName, bi1.ISBN));
+    }
+
 }
