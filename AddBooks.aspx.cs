@@ -11,4 +11,26 @@ public partial class AddBooks : System.Web.UI.Page
     {
 
     }
+
+    //custom validator
+    protected void CheckLandFriendName(object sender, ServerValidateEventArgs e)
+    {
+        //is landed and no friend name
+        if (rdoLanded.Checked && String.IsNullOrEmpty(e.Value))
+        {
+            e.IsValid = false;
+        }
+    }
+
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        if (Page.IsValid)
+        {
+            btnSave.Text = "Valid";
+        }
+        else
+        {
+            btnSave.Text = "Invalid";
+        }
+    }
 }

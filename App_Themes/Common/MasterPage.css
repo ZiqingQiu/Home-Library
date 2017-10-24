@@ -84,7 +84,6 @@
 
 #content {
     position: absolute;
-    width: 980px;
     height: 600px;
     z-index: 1;
     top: 280px;

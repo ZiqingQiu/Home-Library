@@ -26,13 +26,14 @@
         <%-- name of the friend --%>
         <asp:Label ID="lblLandFriName" runat="server" Text="Friend's Name: "></asp:Label>
         <asp:TextBox ID="txtLandFriName" runat="server"></asp:TextBox>
+        <asp:CustomValidator ID="ctmvldLandFriName" runat="server" ErrorMessage="Friend's name can not be empty when the book is landed" ControlToValidate="txtLandFriName" OnServerValidate="CheckLandFriendName" ForeColor="Red" ValidateEmptyText="True"></asp:CustomValidator>
         <br />
         <%-- comments --%>
         <asp:Label ID="lblComments" runat="server" Text="Comments: "></asp:Label>
         <asp:TextBox ID="txtComments" runat="server" Columns="3" Rows="4" TextMode="MultiLine"></asp:TextBox>
         <br />
         <%-- button --%>
-        <asp:Button ID="btnSave" runat="server" Text="Save" />
+        <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
         <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="False" />
 
 
