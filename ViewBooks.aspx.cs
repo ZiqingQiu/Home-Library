@@ -8,6 +8,15 @@ using System.Web.UI.WebControls;
 
 public partial class ViewBooks : System.Web.UI.Page
 {
+    
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        //add session based theme
+        if (Session["CurrrentTheme"] != null)
+        {
+            this.Theme = Session["CurrrentTheme"] as string;
+        }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         BookRepository books = Application["books"] as BookRepository;

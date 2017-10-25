@@ -10,6 +10,7 @@ public partial class Home : System.Web.UI.Page
 
     protected void Page_PreInit(object sender, EventArgs e)
     {
+        //add session based theme
         if (Session["CurrrentTheme"] != null)
         {
             this.Theme = Session["CurrrentTheme"] as string;
