@@ -9,5 +9,7 @@
         description="Add new books to library" />
     <siteMapNode url="~/SearchBooks.aspx" title="Search Book"
         description="Search a Book" />
+    <siteMapNode url="~/Setup.aspx" title="Set Theme"
+        description="Set website theme" />
   </siteMapNode>
 </siteMap>
