@@ -14,5 +14,7 @@ Default skin template. The following skins are provided as examples only.
 <asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
 --%>
 <asp:Label runat="server" Width="150"></asp:Label>
-<asp:TextBox runat="server" Width="200"></asp:TextBox>
-<asp:ListBox runat="server" Width="200"></asp:ListBox>
+
+<%--put width into CSS because so far I do not know how align textbox with multiple line aligned the same width with single line textbox --%>
+<asp:TextBox runat="server" class="formalign"></asp:TextBox>
+<asp:DropDownList  runat="server"  class="formalign"></asp:DropDownList>

@@ -10,7 +10,11 @@
         <bi:BookInfo ID="bi1" runat="server" />
         <%-- genre --%>
         <asp:Label ID="lblGenre" runat="server" Text="Genre: "></asp:Label>
-        <asp:ListBox ID="lbxGenre" runat="server"></asp:ListBox>
+        <asp:DropDownList ID="lbxGenre" runat="server">
+            <asp:ListItem Text="Comedy" Value="genre_comedy" />
+            <asp:ListItem Text="Drama" Value="#genre_drama" />
+            <asp:ListItem Text="Romance" Value="#genre_romance" />
+        </asp:DropDownList>
         <br />
         <%-- number of pages --%>
         <asp:Label ID="lblNumOfPages" runat="server" Text="Number Of Pages: "></asp:Label>
@@ -30,7 +34,7 @@
         <br />
         <%-- comments --%>
         <asp:Label ID="lblComments" runat="server" Text="Comments: "></asp:Label>
-        <asp:TextBox ID="txtComments" runat="server" Columns="3" Rows="4" TextMode="MultiLine"></asp:TextBox>
+        <asp:TextBox ID="txtComments" runat="server" Rows="4" TextMode="MultiLine"></asp:TextBox>
         <br />
         <%-- button --%>
         <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
