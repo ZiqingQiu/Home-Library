@@ -76,10 +76,10 @@
     text-transform: capitalize;
 }
 
-    #navigation li a:hover {
+#navigation li a:hover {
         background-color: #FFFFFF;
         color: #282728;
-    }
+}
 
 #content {
     position: absolute;
@@ -91,8 +91,8 @@
 
 #IntroText {
     position: relative;
-    top: 20px;
-    left: 50px;
+    top: 10px;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -102,8 +102,13 @@
     margin-top: 10px;
 }
 
+.validatorformat {
+    position:relative;
+    left: 153px;
+}
+
 .formalign {
-    width: 250px;
+    width: 200px;
     height: 20px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

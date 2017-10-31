@@ -18,4 +18,5 @@ Default skin template. The following skins are provided as examples only.
 <%--put width into CSS because so far I do not know how align textbox with multiple line aligned the same width with single line textbox --%>
 <asp:TextBox runat="server" class="formalign"></asp:TextBox>
 <asp:DropDownList  runat="server"  class="formalign"></asp:DropDownList>
-<asp:RadioButton runat="server" class="formalign"/>
+
+<asp:RequiredFieldValidator runat="server" class="validatorformat"></asp:RequiredFieldValidator>

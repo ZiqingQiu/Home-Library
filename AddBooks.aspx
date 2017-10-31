@@ -16,9 +16,11 @@
             <asp:ListItem Text="Romance" Value="#genre_romance" />
         </asp:DropDownList>
         <br />
+        <br />
         <%-- number of pages --%>
         <asp:Label ID="lblNumOfPages" runat="server" Text="Number Of Pages: "></asp:Label>
         <asp:TextBox ID="txtNumOfPages" runat="server" TextMode="Number"></asp:TextBox>
+        <br />
         <asp:RequiredFieldValidator ID="requireNumOfPages" runat="server" ErrorMessage="Page Number can not be empty" ControlToValidate="txtNumOfPages" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
         <asp:CompareValidator ID="compareNumOfPages" runat="server" ErrorMessage="Page Number must be a positive integer" ControlToValidate="txtNumOfPages" Display="Dynamic" Operator="GreaterThan" Type="Integer" ValueToCompare="0" ForeColor="Red"></asp:CompareValidator>
         <br />
@@ -27,10 +29,12 @@
         <asp:RadioButton ID="rdoLanded" runat="server" GroupName="LandStatus" Text="Yes"/>
         <asp:RadioButton ID="rdoNotLanded" runat="server" GroupName="LandStatus" Text="No"/>
         <br />
+        <br />
         <%-- name of the friend --%>
         <asp:Label ID="lblLandFriName" runat="server" Text="Friend's Name: "></asp:Label>
         <asp:TextBox ID="txtLandFriName" runat="server"></asp:TextBox>
-        <asp:CustomValidator ID="ctmvldLandFriName" runat="server" ErrorMessage="Friend's name can not be empty when the book is landed" ControlToValidate="txtLandFriName" OnServerValidate="CheckLandFriendName" ForeColor="Red" ValidateEmptyText="True"></asp:CustomValidator>
+        <br />
+        <asp:CustomValidator ID="ctmvldLandFriName" runat="server" ErrorMessage="Friend's name can not be empty when the book is landed" ControlToValidate="txtLandFriName" OnServerValidate="CheckLandFriendName" ForeColor="Red" ValidateEmptyText="True" Display="Dynamic"></asp:CustomValidator>
         <br />
         <%-- comments --%>
         <asp:Label ID="lblComments" runat="server" Text="Comments: "></asp:Label>
@@ -39,7 +43,6 @@
         <%-- button --%>
         <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
         <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="False" OnClick="btnCancel_Click" />
-
     </div>
 </asp:Content>
 
