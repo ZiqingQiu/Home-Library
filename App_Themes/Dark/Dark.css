@@ -1,11 +1,54 @@
-﻿#allPage {
+﻿
+#allPage {
+    color: darkslategrey;
+}
+
+.banner-head {
     color: #000000;
 }
 
-#content {
-    background-color: grey;
+#navigation {
+    background-color: ivory;
 }
 
-#IntroText {
-    color:black;
+    #navigation li a {
+        color: #000000;
+    }
+
+        #navigation li a:hover {
+            background-color: #000000;
+            color: ivory;
+        }
+
+#content {
+    background-color: azure;
+}
+
+.userinput, .userinputmultiline {
+    color: darkslategrey;
+}
+
+.btn {
+    border-color: darkslategrey;
+    background-color: darkslategrey;
+    color: #000000;
+}
+
+    .btn:hover {
+        border-color: #000000;
+        background-color: #000000;
+        color: darkslategrey;
+    }
+
+#viewbooktable tr:nth-child(even) {
+    background-color: #000000;
+}
+
+#viewbooktable, #viewbooktable tr, #viewbooktable td {
+    border: 1px solid darkslategrey;
+}
+
+#footer {
+    background-color: ivory;
+    color: #000000;
 }
