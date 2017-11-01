@@ -6,19 +6,19 @@
 
 
 #allPage {
-    color: var(--main-bg-color);
+    color: #000080;
 }
 
 .banner-head {
-    color: var(--main-text-color);
+    color: #FFFFFF;
 }
 
 #navigation li a {
-    color: var(--main-text-color);
+    color: #FFFFFF;
 }
 
     #navigation li a:hover {
-        background-color: var(--main-text-color);
+        background-color: #FFFFFF;
         color: #282728;
     }
 
@@ -31,7 +31,7 @@
 }
 
 .btn {
-    border-color: var(--main-bg-color);
-    background-color: var(--main-bg-color);
-    color: var(--main-hover-color);
+    border-color: peru;
+    background-color: peru;
+    color: #FFFFFF;
 }
