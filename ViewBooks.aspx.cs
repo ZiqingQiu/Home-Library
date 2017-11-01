@@ -27,7 +27,7 @@ public partial class ViewBooks : System.Web.UI.Page
         else
         {
             StringBuilder table = new StringBuilder();
-            table.Append("<table><tr><td>Name</td><td>Author</td><td>ISBN</td>");
+            table.Append("<table id=\"viewbooktable\"><tr><td>Name</td><td>Author</td><td>ISBN</td>");
             foreach (Book b in books.GetAllBooks())
             {
                 table.Append("<tr><td>");

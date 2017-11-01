@@ -1,4 +1,4 @@
-﻿#HomeContentPosition, #AddBookContentPosition {
+﻿#HomeContentPosition, #AddBookContentPosition, #ViewBookContentPosition {
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -12,4 +12,22 @@
 #AddBookContentPosition {
     top: 80px;
     width: 400px;
+}
+
+#ViewBookContentPosition {
+    top: 80px;
+    width: 400px;
+}
+
+#viewbooktable {
+    border-collapse: collapse;
+    width: 400px;
+}
+
+#viewbooktable tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+#viewbooktable, #viewbooktable tr, #viewbooktable td {
+    border: 1px solid black;
 }
