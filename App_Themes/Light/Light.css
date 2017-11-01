@@ -1,6 +1,6 @@
 ﻿
 #allPage {
-    color: #000080;
+    color: peru;
 }
 
 .banner-head {
@@ -24,11 +24,9 @@
     background-color: cornsilk;
 }
 
-
-#IntroText, .userinput, .userinputmultiline {
+.userinput, .userinputmultiline {
     color: peru;
 }
-
 
 .btn {
     border-color: peru;
