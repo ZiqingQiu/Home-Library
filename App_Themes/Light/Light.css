@@ -24,11 +24,8 @@
     background-color: cornsilk;
 }
 
-#IntroText {
-    color: peru;
-}
 
-.userinput {
+#IntroText, .userinput, .userinputmultiline {
     color: peru;
 }
 
@@ -38,7 +35,7 @@
     background-color: peru;
     color: #FFFFFF;
 }
-    .btn a:hover {
+    .btn:hover {
         border-color: #FFFFFF;
         background-color: #FFFFFF;
         color: peru;

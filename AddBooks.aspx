@@ -41,6 +41,8 @@
         <asp:TextBox ID="txtComments" runat="server" Rows="4" TextMode="MultiLine" SkinID="textboxmultiline"></asp:TextBox>
         <br />
         <%-- button --%>
+        <br />
+        <br />
         <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
         <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="False" OnClick="btnCancel_Click" />
     </div>
