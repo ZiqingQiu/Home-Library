@@ -20,6 +20,6 @@ Default skin template. The following skins are provided as examples only.
 <asp:DropDownList  runat="server"  class="userinput"></asp:DropDownList>
 <asp:Button runat="server" class="btn"/>
 
-<asp:RequiredFieldValidator runat="server" class="validator"></asp:RequiredFieldValidator>
-<asp:CompareValidator runat="server" class="validator"></asp:CompareValidator>
-<asp:CustomValidator runat="server" class="validator"></asp:CustomValidator>
+<asp:RequiredFieldValidator runat="server" Display="Dynamic" ForeColor="Red" class="validator"></asp:RequiredFieldValidator>
+<asp:CompareValidator runat="server" Display="Dynamic" ForeColor="Red" class="validator"></asp:CompareValidator>
+<asp:CustomValidator runat="server" Display="Dynamic" ForeColor="Red" class="validator"></asp:CustomValidator>

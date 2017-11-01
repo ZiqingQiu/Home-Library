@@ -1,10 +1,4 @@
-﻿:root {
-    --main-bg-color: #000080;
-    --main-text-color: #FFFFFF;
-}
-
-
-
+﻿
 #allPage {
     color: #000080;
 }
@@ -17,10 +11,10 @@
     color: #FFFFFF;
 }
 
-    #navigation li a:hover {
-        background-color: #FFFFFF;
-        color: #282728;
-    }
+#navigation li a:hover {
+    background-color: #FFFFFF;
+    color: #282728;
+}
 
 #content {
     background-color: cornsilk;

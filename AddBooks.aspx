@@ -21,8 +21,8 @@
         <asp:Label ID="lblNumOfPages" runat="server" Text="Number Of Pages: "></asp:Label>
         <asp:TextBox ID="txtNumOfPages" runat="server" TextMode="Number"></asp:TextBox>
         <br />
-        <asp:RequiredFieldValidator ID="requireNumOfPages" runat="server" ErrorMessage="Page Number can not be empty" ControlToValidate="txtNumOfPages" Display="Dynamic" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
-        <asp:CompareValidator ID="compareNumOfPages" runat="server" ErrorMessage="Page Number must be a positive integer" ControlToValidate="txtNumOfPages" Display="Dynamic" Operator="GreaterThan" Type="Integer" ValueToCompare="0" ForeColor="Red"></asp:CompareValidator>
+        <asp:RequiredFieldValidator ID="requireNumOfPages" runat="server" ErrorMessage="Page Number can not be empty" ControlToValidate="txtNumOfPages"></asp:RequiredFieldValidator>
+        <asp:CompareValidator ID="compareNumOfPages" runat="server" ErrorMessage="Page Number must be a positive integer" ControlToValidate="txtNumOfPages" Operator="GreaterThan" Type="Integer" ValueToCompare="0"></asp:CompareValidator>
         <br />
         <%-- whether landed to friend --%>
         <asp:Label ID="lblLandToFriend" runat="server" Text="Landed To Friend: "></asp:Label>
@@ -34,7 +34,7 @@
         <asp:Label ID="lblLandFriName" runat="server" Text="Friend's Name: "></asp:Label>
         <asp:TextBox ID="txtLandFriName" runat="server"></asp:TextBox>
         <br />
-        <asp:CustomValidator ID="ctmvldLandFriName" runat="server" ErrorMessage="Friend's name can not be empty when the book is landed" ControlToValidate="txtLandFriName" OnServerValidate="CheckLandFriendName" ForeColor="Red" ValidateEmptyText="True" Display="Dynamic"></asp:CustomValidator>
+        <asp:CustomValidator ID="ctmvldLandFriName" runat="server" ErrorMessage="Friend's name can not be empty when the book is landed" ControlToValidate="txtLandFriName" OnServerValidate="CheckLandFriendName" ValidateEmptyText="True"></asp:CustomValidator>
         <br />
         <%-- comments --%>
         <asp:Label ID="lblComments" runat="server" Text="Comments: "></asp:Label>

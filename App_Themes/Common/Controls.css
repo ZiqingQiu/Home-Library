@@ -7,7 +7,7 @@
     left: 153px;
 }
 
-.userinput {
+.userinput{
     width: 200px;
     height: 20px;
     -webkit-box-sizing: border-box;
@@ -18,7 +18,6 @@
 .btn {
     text-transform: capitalize;
     border-radius: 4px;
-    box-shadow: 0px 0px 0px;
     border-style: solid;
     cursor: pointer;
 }
