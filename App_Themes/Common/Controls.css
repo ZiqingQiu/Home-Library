@@ -1,26 +1,25 @@
 ﻿.label {
-    margin-top: 10px;
+    display: inline-block;
+    vertical-align:top;
 }
-
 .validator {
     position: relative;
     left: 153px;
 }
 
-.userinput{
+.userinput, .userinputmultiline {
     width: 200px;
-    height: 20px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
+.userinput {
+    height: 20px;
+}
+
 .userinputmultiline {
-    width: 200px;
     height: 80px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .btn {

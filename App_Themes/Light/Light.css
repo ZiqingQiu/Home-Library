@@ -7,14 +7,18 @@
     color: #FFFFFF;
 }
 
+#navigation {
+    background-color: Chocolate;
+}
+
 #navigation li a {
     color: #FFFFFF;
 }
 
-#navigation li a:hover {
-    background-color: #FFFFFF;
-    color: #282728;
-}
+    #navigation li a:hover {
+        background-color: #FFFFFF;
+        color: chocolate;
+    }
 
 #content {
     background-color: cornsilk;
@@ -32,5 +36,15 @@
 .btn {
     border-color: peru;
     background-color: peru;
+    color: #FFFFFF;
+}
+    .btn a:hover {
+        border-color: #FFFFFF;
+        background-color: #FFFFFF;
+        color: peru;
+    }
+
+#footer {
+    background-color: chocolate;
     color: #FFFFFF;
 }
