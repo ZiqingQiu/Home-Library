@@ -17,6 +17,7 @@ Default skin template. The following skins are provided as examples only.
 
 <%--put width into CSS because so far I do not know how align textbox with multiple line aligned the same width with single line textbox --%>
 <asp:TextBox runat="server" class="userinput"></asp:TextBox>
+<asp:TextBox runat="server" class="userinputmultiline" SkinID="textboxmultiline"></asp:TextBox>
 <asp:DropDownList  runat="server"  class="userinput"></asp:DropDownList>
 <asp:Button runat="server" class="btn"/>
 
