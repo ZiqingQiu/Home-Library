@@ -13,10 +13,13 @@ Default skin template. The following skins are provided as examples only.
 
 <asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
 --%>
-<asp:Label runat="server" Width="150" class="labelformat"></asp:Label>
+<asp:Label runat="server" Width="150" class="label"></asp:Label>
 
 <%--put width into CSS because so far I do not know how align textbox with multiple line aligned the same width with single line textbox --%>
-<asp:TextBox runat="server" class="formalign"></asp:TextBox>
-<asp:DropDownList  runat="server"  class="formalign"></asp:DropDownList>
+<asp:TextBox runat="server" class="userinput"></asp:TextBox>
+<asp:DropDownList  runat="server"  class="userinput"></asp:DropDownList>
+<asp:Button runat="server" class="btn"/>
 
-<asp:RequiredFieldValidator runat="server" class="validatorformat"></asp:RequiredFieldValidator>
+<asp:RequiredFieldValidator runat="server" class="validator"></asp:RequiredFieldValidator>
+<asp:CompareValidator runat="server" class="validator"></asp:CompareValidator>
+<asp:CustomValidator runat="server" class="validator"></asp:CustomValidator>

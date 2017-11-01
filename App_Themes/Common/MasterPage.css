@@ -26,7 +26,6 @@
     z-index: 1;
     background-image: url('../../../images/banner.jpg');
     background-repeat: no-repeat;
-    color: #FFFFFF;
 }
 
 .banner-head {
@@ -66,7 +65,6 @@
 
 #navigation li a {
     display: inline-block;
-    color: #FFFFFF;
     text-align: center;
     padding: 7px 28px 7px 28px;
     text-decoration: none;
@@ -76,10 +74,6 @@
     text-transform: capitalize;
 }
 
-#navigation li a:hover {
-        background-color: #FFFFFF;
-        color: #282728;
-}
 
 #content {
     position: absolute;
@@ -98,21 +92,9 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.labelformat {
-    margin-top: 10px;
-}
-
-.validatorformat {
-    position:relative;
-    left: 153px;
-}
-
-.formalign {
-    width: 200px;
-    height: 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+iframe {
+    width: 480px;
+    height: 320px;
 }
 
 #footer {

@@ -34,7 +34,7 @@
         
             </asp:ContentPlaceHolder>
         </div>
-        <div id="footer">&copy;&nbsp;Copyright Ziqing(James) Qiu COMP 219 Assignment 1</div>
+        <div id="footer">&copy;&nbsp;Copyright Ziqing(James) Qiu COMP 219 ASP.NET Assignment</div>
     </div>
     </form>
 </body>

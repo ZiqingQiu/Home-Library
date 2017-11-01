@@ -1,6 +1,26 @@
-﻿#allPage {
-    color: #000080;
+﻿:root {
+    --main-bg-color: #000080;
+    --main-text-color: #FFFFFF;
 }
+
+
+
+#allPage {
+    color: var(--main-bg-color);
+}
+
+.banner-head {
+    color: var(--main-text-color);
+}
+
+#navigation li a {
+    color: var(--main-text-color);
+}
+
+    #navigation li a:hover {
+        background-color: var(--main-text-color);
+        color: #282728;
+    }
 
 #content {
     background-color: cornsilk;
@@ -8,4 +28,10 @@
 
 #IntroText {
     color: peru;
+}
+
+.btn {
+    border-color: var(--main-bg-color);
+    background-color: var(--main-bg-color);
+    color: var(--main-hover-color);
 }
