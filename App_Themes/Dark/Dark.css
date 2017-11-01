@@ -40,10 +40,6 @@
         color: darkslategrey;
     }
 
-#viewbooktable tr:nth-child(even) {
-    background-color: #000000;
-}
-
 #viewbooktable, #viewbooktable tr, #viewbooktable td {
     border: 1px solid darkslategrey;
 }
