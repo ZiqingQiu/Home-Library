@@ -39,6 +39,14 @@
         color: peru;
     }
 
+#viewbooktable tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+#viewbooktable, #viewbooktable tr, #viewbooktable td {
+    border: 1px solid peru;
+}
+
 #footer {
     background-color: chocolate;
     color: #FFFFFF;
