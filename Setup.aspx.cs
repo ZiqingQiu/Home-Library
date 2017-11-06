@@ -35,6 +35,7 @@ public partial class Setup : System.Web.UI.Page
         {
             Session["CurrrentTheme"] = "Dark";
         }
-        Response.Redirect("Setup.aspx");
+        //Response.Redirect("Setup.aspx");
+        Server.Transfer("Setup.aspx");
     }
 }
