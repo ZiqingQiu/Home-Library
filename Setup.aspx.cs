@@ -38,4 +38,18 @@ public partial class Setup : System.Web.UI.Page
         //Response.Redirect("Setup.aspx");
         Server.Transfer("Setup.aspx");
     }
+
+    protected void Page_PreRender(object sender, EventArgs e)
+    {
+        if (Session["CurrrentTheme"] as string == "Light")
+        {
+            rdoLight.Checked = true;
+        }
+
+        if (Session["CurrrentTheme"] as string == "Dark")
+        {
+            rdoDark.Checked = true;
+        }
+    }
+
 }
