@@ -54,18 +54,6 @@ public partial class AddBooks : System.Web.UI.Page
     /// </summary>
     protected void ClearUserInputControls()
     {
-        /*
-        //user control
-        bi1.BookName = String.Empty;
-        bi1.AuthorName = String.Empty;
-        bi1.ISBN = String.Empty;
-        //web server control
-        txtNumOfPages.Text = String.Empty;
-        rdoLanded.Checked = false;
-        rdoNotLanded.Checked = false;
-        txtLandFriName.Text = String.Empty;
-        txtComments.Text = String.Empty;
-        */
         Response.Redirect("AddBooks.aspx");
     }
 
@@ -74,14 +62,7 @@ public partial class AddBooks : System.Web.UI.Page
     /// </summary>
     protected void AddBook()
     {
-        BookRepository books = Application["books"] as BookRepository;
-        if (null == books)
-        {
-            books = new BookRepository();
-            Application["books"] = books;
-        }
-
-        books.AddBook(new Book(bi1.BookName, bi1.AuthorName, bi1.ISBN));
+        //write database to insert
     }
 
 }
