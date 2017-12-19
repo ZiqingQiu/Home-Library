@@ -56,4 +56,14 @@ public partial class ViewBooks : System.Web.UI.Page
         }
 
     }
+
+
+    protected void BooksGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        //###prototype
+        if (e.CommandName == "MoreDetailsPlease")
+        {
+            extraDetailsLiteral.Text = "ISBN: <strong>" + e.CommandArgument + "</strong><br />";
+        }
+    }
 }
