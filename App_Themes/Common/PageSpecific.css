@@ -16,7 +16,9 @@
 
 #ViewBookContentPosition {
     top: 80px;
-    width: 400px;
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #viewbooktable {
