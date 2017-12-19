@@ -29,3 +29,27 @@
     cursor: pointer;
     height:25px;
 }
+
+/*###need split into light and dark*/
+.GridMain {
+    border-right: gainsboro thin solid;
+    border-top: gainsboro thin solid;
+    border-left: gainsboro thin solid;
+    border-bottom: gainsboro thin solid;
+    background-color: #333333;
+    width: 400px;
+}
+
+.GridRow {
+    background-color: #FFFAFA;
+}
+
+.GridSelectedRow {
+    background-color: #E6E6FA;
+}
+
+.GridHeader {
+    background-color: #ADD8E6;
+    font-weight: bold;
+    text-align: left;
+}
