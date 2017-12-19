@@ -16,6 +16,10 @@ public partial class AddBooks : System.Web.UI.Page
         {
             this.Theme = Session["CurrrentTheme"] as string;
         }
+        else
+        {
+            this.Theme = "Light";
+        }
     }
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -102,6 +106,23 @@ public partial class AddBooks : System.Web.UI.Page
         //@Comments
         comm.Parameters.Add("@Comments", System.Data.SqlDbType.NVarChar, 50);
         comm.Parameters["@Comments"].Value = txtComments.Text;
+
+        try
+        {
+            conn.Open();
+            comm.ExecuteNonQuery();
+            Response.Redirect("AddBooks.aspx");
+        }
+        catch
+        {
+            Response.Write("Error adding new book.");
+        }
+        finally
+        {
+            conn.Close();
+        }
+
+       
     }
 
 }
