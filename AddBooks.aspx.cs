@@ -68,7 +68,7 @@ public partial class AddBooks : System.Web.UI.Page
     /// </summary>
     protected void AddBook()
     {
-        //write database to insert
+        //write database to insert new book
         SqlConnection conn;
         SqlCommand comm;
 
