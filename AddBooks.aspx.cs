@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -63,6 +65,43 @@ public partial class AddBooks : System.Web.UI.Page
     protected void AddBook()
     {
         //write database to insert
+        SqlConnection conn;
+        SqlCommand comm;
+
+        string connectionString = ConfigurationManager.ConnectionStrings["Homelibrary"].ConnectionString;
+        conn = new SqlConnection(connectionString);
+        comm = new SqlCommand("INSERT INTO books VALUES(@ISBN, @Name, @Author, @Genre, @Pages, @Landed, @Friend, @Comments)", conn);
+        //@ISBN
+        comm.Parameters.Add("@ISBN", System.Data.SqlDbType.NVarChar,13);
+        comm.Parameters["@ISBN"].Value = bi1.ISBN;
+        //@Name
+        comm.Parameters.Add("@Name", System.Data.SqlDbType.NVarChar, 20);
+        comm.Parameters["@Name"].Value = bi1.BookName;
+        //@Author
+        comm.Parameters.Add("@Author", System.Data.SqlDbType.NVarChar, 20);
+        comm.Parameters["@Author"].Value = bi1.AuthorName;
+        //@Genre
+        comm.Parameters.Add("@Genre", System.Data.SqlDbType.NVarChar, 10);
+        comm.Parameters["@Genre"].Value = lbxGenre.Text;
+        //@Pages
+        comm.Parameters.Add("@Pages", System.Data.SqlDbType.Int);
+        comm.Parameters["@Pages"].Value = txtNumOfPages.Text;
+        //@Landed
+        comm.Parameters.Add("@Landed", System.Data.SqlDbType.Char, 1);
+        if (rdoLanded.Checked)
+        {
+            comm.Parameters["@Landed"].Value = 'Y';
+        }
+        else
+        {
+            comm.Parameters["@Landed"].Value = 'N';
+        }
+        //@Friend
+        comm.Parameters.Add("@Friend", System.Data.SqlDbType.NVarChar, 20);
+        comm.Parameters["@Friend"].Value = txtLandFriName.Text;
+        //@Comments
+        comm.Parameters.Add("@Comments", System.Data.SqlDbType.NVarChar, 50);
+        comm.Parameters["@Comments"].Value = txtComments.Text;
     }
 
 }
