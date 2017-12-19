@@ -40,7 +40,7 @@ public partial class ViewBooks : System.Web.UI.Page
 
         string connectionString = ConfigurationManager.ConnectionStrings["Homelibrary"].ConnectionString;
         conn = new SqlConnection(connectionString);
-        comm = new SqlCommand("SELECT * FROM books", conn);
+        comm = new SqlCommand("SELECT Name, Author, ISBN FROM books", conn);
 
         try
         {
