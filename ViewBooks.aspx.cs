@@ -26,7 +26,7 @@ public partial class ViewBooks : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //use gridview to retreive data from database
-        if (!IsPostBack)
+        if (true)
         {
             BindGrid();
         }
@@ -61,9 +61,13 @@ public partial class ViewBooks : System.Web.UI.Page
     protected void BooksGridView_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         //###prototype
+        
         if (e.CommandName == "MoreDetailsPlease")
         {
-            extraDetailsLiteral.Text = "ISBN: <strong>" + e.CommandArgument + "</strong><br />";
+            GridViewRow row = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
+            Literal li = (Literal)row.FindControl("extraDetailsLiteral");
+            li.Text = "ISBN: <strong>" + e.CommandArgument + "</strong><br />";
         }
+        
     }
 }

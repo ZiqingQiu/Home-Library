@@ -8,7 +8,8 @@
             <Columns>
                 <asp:BoundField DataField="ISBN" HeaderText="ISBN" />
                 <asp:TemplateField HeaderText="Book Title">
-                    <ItemTemplate>                      
+                    <ItemTemplate>      
+                        <asp:Literal ID="extraDetailsLiteral" runat="server" EnableViewState="false" />
                         <asp:LinkButton ID="detailsButton" runat="server" Text='<%# Eval("Name") %>' 
                             CommandName="MoreDetailsPlease" CommandArgument=<%#Eval("ISBN")%>></asp:LinkButton>
                     </ItemTemplate>
@@ -16,7 +17,6 @@
                 <asp:BoundField DataField="Author" HeaderText="Author Name" />                     
             </Columns>
         </asp:GridView>
-        <asp:Label ID="extraDetailsLiteral" runat="server" Text="No Value"></asp:Label>
     </div>
 </asp:Content>
 
