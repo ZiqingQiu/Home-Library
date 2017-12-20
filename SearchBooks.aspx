@@ -4,9 +4,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div id="ViewBookContentPosition">
-        <asp:SqlDataSource ID="SearchBookSqlSource" runat="server" ConnectionString="<%$ ConnectionStrings:Homelibrary %>" SelectCommand="SELECT DISTINCT Genre FROM Books"></asp:SqlDataSource>
-        <asp:DetailsView ID="searchBookDetailsView" runat="server" AutoGenerateRows="False" DataSourceID="SearchBookSqlSource">
-        </asp:DetailsView>
+        <asp:SqlDataSource ID="SearchBookSqlSource" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:Homelibrary %>" 
+            SelectCommand="SELECT DISTINCT [Genre] FROM [Books]"></asp:SqlDataSource>
+      
+    <asp:DropDownList
+          id="ListBox1"
+          runat="server"
+          DataTextField="Genre"
+          DataValueField="Genre" 
+          DataSourceID="SearchBookSqlSource" 
+          AppendDataBoundItems ="True">
+        <asp:ListItem Text="All" Value ="all" Selected="True"></asp:ListItem>
+      </asp:DropDownList>
     </div>
 </asp:Content>
 
