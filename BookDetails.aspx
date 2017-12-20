@@ -4,22 +4,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div id="ViewBookContentPosition">
-        <asp:DetailsView ID="bookDetailsView" runat="server" AutoGenerateRows="False" CssClass="GridMain">
+        <asp:DetailsView ID="bookDetailsView" runat="server" AutoGenerateRows="False">
             <Fields>
-                <asp:BoundField DataField="Title" HeaderText="Book Title" ReadOnly="True" SortExpression="Title" />
-                <asp:BoundField DataField="Author" HeaderText="Author Name" ReadOnly="True" SortExpression="Author" />
-                <asp:BoundField DataField="ISBN" HeaderText="ISBN" ReadOnly="True" SortExpression="ISBN" />
-                <asp:BoundField DataField="Genre" HeaderText="Genre" ReadOnly="True" SortExpression="Genre" />
-                <asp:BoundField DataField="Pages" HeaderText="Total Pages" ReadOnly="True" SortExpression="Pages" />
-                <asp:BoundField DataField="Landed" HeaderText="Is Landed" ReadOnly="True" SortExpression="Landed" />
-                <asp:BoundField DataField="Friend" HeaderText="Friend Name" ReadOnly="True" SortExpression="Friend" />
-                <asp:BoundField DataField="Comments" HeaderText="Comments" ReadOnly="True" SortExpression="Comments" />
+                <asp:BoundField DataField="Title" HeaderText="Book Title" SortExpression="Title" />
+                <asp:BoundField DataField="Author" HeaderText="Author Name"  SortExpression="Author" />
+                <asp:BoundField DataField="ISBN" HeaderText="ISBN" SortExpression="ISBN" />
+                <asp:BoundField DataField="Genre" HeaderText="Genre" SortExpression="Genre" />
+                <asp:BoundField DataField="Pages" HeaderText="Total Pages" SortExpression="Pages" />
+                <asp:BoundField DataField="Landed" HeaderText="Is Landed" SortExpression="Landed" />
+                <asp:BoundField DataField="Friend" HeaderText="Friend Name" SortExpression="Friend" />
+                <asp:BoundField DataField="Comments" HeaderText="Comments" SortExpression="Comments" />
             </Fields>
             <HeaderTemplate>
                 <%#Eval("Title")%>
             </HeaderTemplate>
-            <RowStyle CssClass="GridRow" />
-            <HeaderStyle CssClass="GridHeader" />
         </asp:DetailsView>
     </div>
 </asp:Content>
