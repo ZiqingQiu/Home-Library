@@ -74,13 +74,13 @@ public partial class AddBooks : System.Web.UI.Page
 
         string connectionString = ConfigurationManager.ConnectionStrings["Homelibrary"].ConnectionString;
         conn = new SqlConnection(connectionString);
-        comm = new SqlCommand("INSERT INTO books VALUES(@ISBN, @Name, @Author, @Genre, @Pages, @Landed, @Friend, @Comments)", conn);
+        comm = new SqlCommand("INSERT INTO books VALUES(@ISBN, @Title, @Author, @Genre, @Pages, @Landed, @Friend, @Comments)", conn);
         //@ISBN
         comm.Parameters.Add("ISBN", System.Data.SqlDbType.NVarChar,13);
         comm.Parameters["ISBN"].Value = bi1.ISBN;
         //@Name
-        comm.Parameters.Add("Name", System.Data.SqlDbType.NVarChar, 20);
-        comm.Parameters["Name"].Value = bi1.BookName;
+        comm.Parameters.Add("Title", System.Data.SqlDbType.NVarChar, 20);
+        comm.Parameters["Title"].Value = bi1.BookName;
         //@Author
         comm.Parameters.Add("Author", System.Data.SqlDbType.NVarChar, 20);
         comm.Parameters["Author"].Value = bi1.AuthorName;

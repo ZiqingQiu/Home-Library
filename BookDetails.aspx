@@ -3,6 +3,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:DetailsView ID="bookDetailsView" runat="server"></asp:DetailsView>
+    <div id="ViewBookContentPosition">
+        <asp:DetailsView ID="bookDetailsView" runat="server" AutoGenerateRows="False">
+            <Fields>
+                <asp:BoundField DataField="Title" HeaderText="Book Title" ReadOnly="True" SortExpression="Title" />
+                <asp:BoundField DataField="Author" HeaderText="Author Name" ReadOnly="True" SortExpression="Author" />
+                <asp:BoundField DataField="ISBN" HeaderText="ISBN" ReadOnly="True" SortExpression="ISBN" />
+                <asp:BoundField DataField="Genre" HeaderText="Genre" ReadOnly="True" SortExpression="Genre" />
+                <asp:BoundField DataField="Pages" HeaderText="Total Pages" ReadOnly="True" SortExpression="Pages" />
+                <asp:BoundField DataField="Landed" HeaderText="IsLanded" ReadOnly="True" SortExpression="Landed" />
+                <asp:BoundField DataField="Friend" HeaderText="Friend Name" ReadOnly="True" SortExpression="Friend" />
+                <asp:BoundField DataField="Comments" HeaderText="Comments" ReadOnly="True" SortExpression="Comments" />
+            </Fields>
+        </asp:DetailsView>
+    </div>
 </asp:Content>
 

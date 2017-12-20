@@ -48,8 +48,7 @@ public partial class BookDetails : System.Web.UI.Page
             conn.Open();
             reader = comm.ExecuteReader();
             bookDetailsView.DataSource = reader;
-            //###
-            //bookDetailsView.DataKeyNames = new string[] { "ISBN" };
+            bookDetailsView.DataKeyNames = new string[] { "ISBN" };
             bookDetailsView.DataBind();
             reader.Close();
         }

@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BookBasicBox.ascx.cs" Inherits="BookBasicBox" %>
 
-<asp:Label ID="lblBookName" runat="server" Text="Book Name: "></asp:Label>
+<asp:Label ID="lblBookName" runat="server" Text="Book Title: "></asp:Label>
 <asp:TextBox ID="txtBookName" runat="server"></asp:TextBox>
 <br />
 <asp:RequiredFieldValidator ID="requireBookName" runat="server" ErrorMessage="BookName can not be empty" ControlToValidate="txtBookName" SetFocusOnError="True"></asp:RequiredFieldValidator>

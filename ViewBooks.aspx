@@ -9,7 +9,7 @@
                 <asp:BoundField DataField="ISBN" HeaderText="ISBN" />
                 <asp:TemplateField HeaderText="Book Title">
                     <ItemTemplate>      
-                        <asp:LinkButton ID="detailsButton" runat="server" Text=<%# Eval("Name") %> 
+                        <asp:LinkButton ID="detailsButton" runat="server" Text=<%# Eval("Title") %> 
                             CommandName="MoreDetailsPlease" CommandArgument=<%# Eval("ISBN") %>></asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
