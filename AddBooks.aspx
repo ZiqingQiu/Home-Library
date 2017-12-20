@@ -11,9 +11,9 @@
         <%-- genre --%>
         <asp:Label ID="lblGenre" runat="server" Text="Genre: "></asp:Label>
         <asp:DropDownList ID="lbxGenre" runat="server">
-            <asp:ListItem Text="Comedy" Value="genre_comedy" />
-            <asp:ListItem Text="Drama" Value="#genre_drama" />
-            <asp:ListItem Text="Romance" Value="#genre_romance" />
+            <asp:ListItem Text="Comedy" Value="Comedy" />
+            <asp:ListItem Text="Drama" Value="Drama" />
+            <asp:ListItem Text="Romance" Value="Romance" />
         </asp:DropDownList>
         <br />
         <br />

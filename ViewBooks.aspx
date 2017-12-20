@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div id="ViewBookContentPosition">
-        <asp:GridView ID="booksGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="booksGridView_RowCommand" PageSize="5">
+        <asp:GridView ID="booksGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="booksGridView_RowCommand" PageSize="5" EmptyDataText="Current no book in library!">
             <Columns>
                 <asp:BoundField DataField="ISBN" HeaderText="ISBN" />
                 <asp:TemplateField HeaderText="Book Title">

@@ -3,6 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    SearchBooks
+    <div id="ViewBookContentPosition">
+        <asp:SqlDataSource ID="SearchBookSqlSource" runat="server" ConnectionString="<%$ ConnectionStrings:Homelibrary %>" SelectCommand="SELECT DISTINCT Genre FROM Books"></asp:SqlDataSource>
+        <asp:DetailsView ID="searchBookDetailsView" runat="server" AutoGenerateRows="False" DataSourceID="SearchBookSqlSource">
+        </asp:DetailsView>
+    </div>
 </asp:Content>
 

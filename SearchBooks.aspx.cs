@@ -14,6 +14,10 @@ public partial class SearchBooks : System.Web.UI.Page
         {
             this.Theme = Session["CurrrentTheme"] as string;
         }
+        else
+        {
+            this.Theme = "Light";
+        }
     }
     protected void Page_Load(object sender, EventArgs e)
     {
