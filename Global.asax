@@ -34,6 +34,7 @@
         // is set to InProc in the Web.config file. If session mode is set to StateServer 
         // or SQLServer, the event is not raised.
         Session["CurrrentTheme"] = null;
+        Session["CurrrentViewBook"] = null;
     }
 
     void CheckSessionId()
@@ -42,6 +43,7 @@
         userCookie = Request.Cookies["ASP.NET_SessionId"];
         if (userCookie == null)
         {
+            //persist same sessionid
             userCookie = new HttpCookie("ASP.NET_SessionId", System.Web.HttpContext.Current.Session.SessionID);
             userCookie.Expires = DateTime.Now.AddMonths(1);
             Response.Cookies.Add(userCookie);
@@ -51,8 +53,6 @@
         {
             Response.Cookies["ASP.NET_SessionId"].Value = System.Web.HttpContext.Current.Session.SessionID;
         }
-        //always throw back this sessinid
-
     }
 
 </script>

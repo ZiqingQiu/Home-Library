@@ -5,8 +5,6 @@
         description="Home library default page" />
     <siteMapNode url="~/ViewBooks.aspx" title="View Book"
         description="View all books" />
-    <siteMapNode url="~/BookDetails.aspx" title="Book Details"
-        description="View selected book details" />
     <siteMapNode url="~/AddBooks.aspx" title="Add Book"
         description="Add new books to library" />
     <siteMapNode url="~/SearchBooks.aspx" title="Search Book"
