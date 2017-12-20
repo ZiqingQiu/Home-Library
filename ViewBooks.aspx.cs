@@ -26,7 +26,8 @@ public partial class ViewBooks : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         //use gridview to retreive data from database
-        if (true)
+        if (!IsPostBack)
+        //if (true)
         {
             BindGrid();
         }
@@ -48,6 +49,10 @@ public partial class ViewBooks : System.Web.UI.Page
             reader = comm.ExecuteReader();
             booksGridView.DataSource = reader;
             booksGridView.DataBind();
+
+            //DatalistTest.DataSource = reader;
+            //DatalistTest.DataBind();
+
             reader.Close();
         }
         finally
@@ -58,16 +63,23 @@ public partial class ViewBooks : System.Web.UI.Page
     }
 
 
-    protected void BooksGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+    protected void booksGridView_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        //###prototype
-        
         if (e.CommandName == "MoreDetailsPlease")
         {
             GridViewRow row = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
-            Literal li = (Literal)row.FindControl("extraDetailsLiteral");
+            Literal li = row.FindControl("extraDetailsLiteral") as Literal;
             li.Text = "ISBN: <strong>" + e.CommandArgument + "</strong><br />";
         }
-        
     }
+
+    //protected void booksDataList_ItemCommand(object source, DataListCommandEventArgs e)
+    //{
+    //    if (e.CommandName == "MoreDetailsPlease")
+    //    {
+    //        Literal li;
+    //        li = e.Item.FindControl("extraDetailsLiteral") as Literal;
+    //        li.Text = "Command Test: <strong>" + e.CommandArgument +  "</strong><br />";
+    //    }
+    //}
 }

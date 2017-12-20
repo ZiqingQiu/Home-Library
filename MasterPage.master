@@ -9,7 +9,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="Assignment1Form1" runat="server" enableviewstate="False">
+    <form id="form1" runat="server">
     <div id="allPage">
         <div id="banner">
             <div id="bannerheader" class="banner-head">
