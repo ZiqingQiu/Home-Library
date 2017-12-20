@@ -59,16 +59,6 @@ public partial class ViewBooks : System.Web.UI.Page
         }
     }
 
-
-    protected void booksGridView_RowCommand(object sender, GridViewCommandEventArgs e)
-    {
-        if (e.CommandName == "MoreDetailsPlease")
-        {
-            Response.Redirect("BookDetails.aspx");
-            Session["CurrrentViewBook"] = e.CommandArgument;
-        }
-    }
-
     //After successfully tested datalist, replaced by gridview
     //protected void booksDataList_ItemCommand(object source, DataListCommandEventArgs e)
     //{
@@ -79,4 +69,13 @@ public partial class ViewBooks : System.Web.UI.Page
     //        li.Text = "Command Test: <strong>" + e.CommandArgument +  "</strong><br />";
     //    }
     //}
+
+    protected void booksGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "MoreDetailsPlease")
+        {
+            Session["CurrrentViewBook"] = e.CommandArgument;
+            Response.Redirect("BookDetails.aspx");          
+        }
+    }
 }
