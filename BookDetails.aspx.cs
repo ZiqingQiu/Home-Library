@@ -57,4 +57,35 @@ public partial class BookDetails : System.Web.UI.Page
             conn.Close();
         }
     }
+
+    protected void bookDetailsView_ItemDeleting(object sender, DetailsViewDeleteEventArgs e)
+    {
+        string ISBN = bookDetailsView.DataKey.Value as string;
+
+        SqlConnection conn;
+        SqlCommand comm;
+        SqlDataReader reader;
+
+        string connectionString = ConfigurationManager.ConnectionStrings["Homelibrary"].ConnectionString;
+        conn = new SqlConnection(connectionString);
+        comm = new SqlCommand("DELETE FROM books WHERE ISBN=@ISBN", conn);
+
+        //@ISBN
+        comm.Parameters.Add("ISBN", System.Data.SqlDbType.NVarChar, 13);
+        comm.Parameters["ISBN"].Value = ISBN;
+
+        try
+        {
+            conn.Open();
+            reader = comm.ExecuteReader();
+            bookDetailsView.DataSource = reader;
+            bookDetailsView.DataKeyNames = new string[] { "ISBN" };
+            bookDetailsView.DataBind();
+            reader.Close();
+        }
+        finally
+        {
+            conn.Close();
+        }
+    }
 }

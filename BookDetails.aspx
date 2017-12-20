@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div id="ViewBookContentPosition">
-        <asp:DetailsView ID="bookDetailsView" runat="server" AutoGenerateRows="False">
+        <asp:DetailsView ID="bookDetailsView" runat="server" AutoGenerateRows="False" OnItemDeleting="bookDetailsView_ItemDeleting">
             <Fields>
                 <asp:BoundField DataField="Title" HeaderText="Book Title" SortExpression="Title" />
                 <asp:BoundField DataField="Author" HeaderText="Author Name"  SortExpression="Author" />
@@ -14,6 +14,7 @@
                 <asp:BoundField DataField="Landed" HeaderText="Is Landed" SortExpression="Landed" />
                 <asp:BoundField DataField="Friend" HeaderText="Friend Name" SortExpression="Friend" />
                 <asp:BoundField DataField="Comments" HeaderText="Comments" SortExpression="Comments" />
+                <asp:ButtonField CommandName="Delete" Text="Delete" />
             </Fields>
             <HeaderTemplate>
                 <%#Eval("Title")%>
