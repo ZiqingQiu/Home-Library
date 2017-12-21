@@ -8,7 +8,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pagecontent" Runat="Server">
     <div id="ViewBookContentPosition">
-        <asp:GridView ID="booksGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="booksGridView_RowCommand" PageSize="5" EmptyDataText="Current no book in library!">
+        <asp:SqlDataSource ID="viewBooksDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Homelibrary %>" SelectCommand="SELECT [ISBN], [Title], [Author] FROM [Books]"></asp:SqlDataSource>
+        <asp:GridView ID="booksGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="booksGridView_RowCommand" PageSize="5" EmptyDataText="Current no book in library!" AllowPaging="True" DataSourceID="viewBooksDataSource">
             <Columns>
                 <asp:BoundField DataField="ISBN" HeaderText="ISBN" />
                 <asp:TemplateField HeaderText="Book Title">

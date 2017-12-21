@@ -54,7 +54,7 @@
                 <asp:ControlParameter ControlID="friendDpdList" Name="Friend" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource> 
-        <asp:GridView ID="resultGrid" runat="server" AutoGenerateColumns="False" EmptyDataText="No Book Found!" DataSourceID="SearchResultSqlSource">
+        <asp:GridView ID="resultGrid" runat="server" AutoGenerateColumns="False" EmptyDataText="No Book Found!" DataSourceID="SearchResultSqlSource" AllowPaging="True" PageSize="5">
             <Columns>
                 <asp:BoundField DataField="Title" HeaderText="Book Title" ReadOnly="True" SortExpression="Title" />
                 <asp:BoundField DataField="ISBN" HeaderText="ISBN" ReadOnly="True" SortExpression="ISBN" />

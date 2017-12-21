@@ -28,36 +28,37 @@ public partial class ViewBooks : System.Web.UI.Page
         //use gridview to retreive data from database
         if (!IsPostBack)
         {
-            BindGrid();
+            //replace to datasouce solution
+            //BindGrid();
         }
     }
 
-    private void BindGrid()
-    {
-        SqlConnection conn;
-        SqlCommand comm;
-        SqlDataReader reader;
+    //private void BindGrid()
+    //{
+    //    SqlConnection conn;
+    //    SqlCommand comm;
+    //    SqlDataReader reader;
 
-        string connectionString = ConfigurationManager.ConnectionStrings["Homelibrary"].ConnectionString;
-        conn = new SqlConnection(connectionString);
-        comm = new SqlCommand("SELECT Title, Author, ISBN FROM books", conn);
+    //    string connectionString = ConfigurationManager.ConnectionStrings["Homelibrary"].ConnectionString;
+    //    conn = new SqlConnection(connectionString);
+    //    comm = new SqlCommand("SELECT Title, Author, ISBN FROM books", conn);
 
-        try
-        {
-            conn.Open();
-            reader = comm.ExecuteReader();
-            //After successfully tested datalist, replaced by gridview
-            //DatalistTest.DataSource = reader;
-            //DatalistTest.DataBind();
-            booksGridView.DataSource = reader;
-            booksGridView.DataBind();
-            reader.Close();
-        }
-        finally
-        {
-            conn.Close();
-        }
-    }
+    //    try
+    //    {
+    //        conn.Open();
+    //        reader = comm.ExecuteReader();
+    //        //After successfully tested datalist, replaced by gridview
+    //        //DatalistTest.DataSource = reader;
+    //        //DatalistTest.DataBind();
+    //        booksGridView.DataSource = reader;
+    //        booksGridView.DataBind();
+    //        reader.Close();
+    //    }
+    //    finally
+    //    {
+    //        conn.Close();
+    //    }
+    //}
 
     //After successfully tested datalist, replaced by gridview
     //protected void booksDataList_ItemCommand(object source, DataListCommandEventArgs e)
