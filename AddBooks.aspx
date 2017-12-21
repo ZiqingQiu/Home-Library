@@ -5,7 +5,7 @@
      2. control and validator--%>
 
 
-<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AddBooks.aspx.cs" Inherits="AddBooks" %>
+<%@ Page Title="Add Books" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AddBooks.aspx.cs" Inherits="AddBooks" %>
 <%@ Register TagPrefix="bi" TagName="BookInfo" Src="~/BookBasicBox.ascx" %>
 
 
