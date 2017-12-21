@@ -26,60 +26,44 @@ public partial class SearchBooks : System.Web.UI.Page
 
     }
 
-    private void BindGrid()
-    {
-        SqlConnection conn;
-        SqlCommand comm;
-        SqlDataReader reader;
+    //private void BindGrid()
+    //{
+    //    SqlConnection conn;
+    //    SqlCommand comm;
+    //    SqlDataReader reader;
 
-        string connectionString = ConfigurationManager.ConnectionStrings["Homelibrary"].ConnectionString;
-        conn = new SqlConnection(connectionString);
-        string commandString;
-        if ((string)genreDpdList.SelectedValue != "All" && (string)friendDpdList.SelectedValue != "All")
-        {
-            commandString = "SELECT Title, Author, ISBN, Genre, Friend FROM books WHERE Genre=@Genre AND Friend=@Friend";
-            comm = new SqlCommand(commandString, conn);
-            comm.Parameters.Add("Genre", System.Data.SqlDbType.NVarChar, 10);
-            comm.Parameters["Genre"].Value = genreDpdList.SelectedValue;
-            comm.Parameters.Add("Friend", System.Data.SqlDbType.NVarChar, 20);
-            comm.Parameters["Friend"].Value = friendDpdList.SelectedValue;
-        }
-        else if ((string)genreDpdList.SelectedValue == "All" && (string)friendDpdList.SelectedValue == "All")
-        {
-            commandString = "SELECT Title, Author, ISBN, Genre, Friend FROM books";
-            comm = new SqlCommand(commandString, conn);
-        }
-        else if ((string)genreDpdList.SelectedValue == "All")
-        {
-            commandString = "SELECT Title, Author, ISBN, Genre, Friend FROM books WHERE Friend=@Friend";
-            comm = new SqlCommand(commandString, conn);
-            comm.Parameters.Add("Friend", System.Data.SqlDbType.NVarChar, 20);
-            comm.Parameters["Friend"].Value = friendDpdList.SelectedValue;
-        }
-        else
-        {
-            commandString = "SELECT Title, Author, ISBN, Genre, Friend FROM books WHERE Genre=@Genre";
-            comm = new SqlCommand(commandString, conn);
-            comm.Parameters.Add("Genre", System.Data.SqlDbType.NVarChar, 10);
-            comm.Parameters["Genre"].Value = genreDpdList.SelectedValue;
-        }
-        
-        try
-        {
-            conn.Open();
-            reader = comm.ExecuteReader();
-            resultGrid.DataSource = reader;
-            resultGrid.DataBind();
-            reader.Close();
-        }
-        finally
-        {
-            conn.Close();
-        }
-    }
+    //    string connectionString = ConfigurationManager.ConnectionStrings["Homelibrary"].ConnectionString;
+    //    conn = new SqlConnection(connectionString);
+    //    string commandString;
+
+    //    //replace below SQL statement to a much clean one
+    //    commandString = "SELECT Title, Author, ISBN, Genre, Friend FROM books " +
+    //        "WHERE (Genre=@Genre OR @Genre='All') AND " +
+    //        "(Friend=@Friend OR @Friend='All')";
+    //    comm = new SqlCommand(commandString, conn);
+    //    comm.Parameters.Add("Genre", System.Data.SqlDbType.NVarChar, 10);
+    //    comm.Parameters["Genre"].Value = genreDpdList.SelectedValue;
+    //    comm.Parameters.Add("Friend", System.Data.SqlDbType.NVarChar, 20);
+    //    comm.Parameters["Friend"].Value = friendDpdList.SelectedValue;
+
+    //    try
+    //    {
+    //        conn.Open();
+    //        reader = comm.ExecuteReader();
+    //        resultGrid.DataSource = reader;
+    //        resultGrid.DataBind();
+    //        reader.Close();
+    //    }
+    //    finally
+    //    {
+    //        conn.Close();
+    //    }
+    //}
 
     protected void searchBtn_Click(object sender, EventArgs e)
     {
-        BindGrid();
+        //12.21 optimize this part, replace by sqldatasource solution
+        //BindGrid();
+        resultGrid.DataBind();
     }
 }

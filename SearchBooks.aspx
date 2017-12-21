@@ -46,7 +46,15 @@
     </div>
 
     <div id="SearchBookResult">
-        <asp:GridView ID="resultGrid" runat="server" AutoGenerateColumns="False" EmptyDataText="No Book Found!">
+        <asp:SqlDataSource ID="SearchResultSqlSource" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:Homelibrary %>" 
+            SelectCommand="SELECT [ISBN], [Title], [Author], [Genre], [Friend] FROM [Books] WHERE (([Genre] = @Genre OR @Genre='All') AND ([Friend] = @Friend OR  @Friend='All'))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="genreDpdList" Name="Genre" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="friendDpdList" Name="Friend" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource> 
+        <asp:GridView ID="resultGrid" runat="server" AutoGenerateColumns="False" EmptyDataText="No Book Found!" DataSourceID="SearchResultSqlSource">
             <Columns>
                 <asp:BoundField DataField="Title" HeaderText="Book Title" ReadOnly="True" SortExpression="Title" />
                 <asp:BoundField DataField="ISBN" HeaderText="ISBN" ReadOnly="True" SortExpression="ISBN" />
