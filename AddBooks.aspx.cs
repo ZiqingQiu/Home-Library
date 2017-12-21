@@ -86,7 +86,15 @@ public partial class AddBooks : System.Web.UI.Page
         comm.Parameters["Author"].Value = bi1.AuthorName;
         //@Genre
         comm.Parameters.Add("Genre", System.Data.SqlDbType.NVarChar, 10);
-        comm.Parameters["Genre"].Value = lbxGenre.Text;
+        if (String.IsNullOrEmpty(lbxGenre.Text))
+        {
+            comm.Parameters["Genre"].Value = DBNull.Value;
+        }
+        else
+        {
+            comm.Parameters["Genre"].Value = lbxGenre.Text;
+        }
+
         //@Pages
         comm.Parameters.Add("Pages", System.Data.SqlDbType.Int);
         comm.Parameters["Pages"].Value = txtNumOfPages.Text;
@@ -102,10 +110,24 @@ public partial class AddBooks : System.Web.UI.Page
         }
         //@Friend
         comm.Parameters.Add("Friend", System.Data.SqlDbType.NVarChar, 20);
-        comm.Parameters["Friend"].Value = txtLandFriName.Text;
+        if (String.IsNullOrEmpty(txtLandFriName.Text))
+        {
+            comm.Parameters["Friend"].Value = DBNull.Value;
+        }
+        else
+        {
+            comm.Parameters["Friend"].Value = txtLandFriName.Text;
+        }
         //@Comments
         comm.Parameters.Add("Comments", System.Data.SqlDbType.NVarChar, 50);
-        comm.Parameters["Comments"].Value = txtComments.Text;
+        if (String.IsNullOrEmpty(txtComments.Text))
+        {
+            comm.Parameters["Comments"].Value = DBNull.Value;
+        }
+        else
+        {
+            comm.Parameters["Comments"].Value = txtComments.Text;
+        }
 
         try
         {
