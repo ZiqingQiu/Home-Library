@@ -48,3 +48,20 @@
     background-color: ivory;
     color: #000000;
 }
+
+
+.GridMain {
+    color: black;
+}
+
+.GridRow {
+    color: black;
+}
+
+.GridSelectedRow {
+    color: black;
+}
+
+.GridHeader {
+    background-color: ivory;
+}

@@ -47,3 +47,20 @@
     background-color: chocolate;
     color: #FFFFFF;
 }
+
+.GridMain {
+    color: white;
+}
+
+.GridRow {
+    color: Chocolate;
+    
+}
+
+.GridSelectedRow {
+    color: Chocolate;
+}
+
+.GridHeader {
+    background-color: Chocolate;
+}
