@@ -44,10 +44,24 @@ public partial class SearchBooks : System.Web.UI.Page
             comm.Parameters.Add("Friend", System.Data.SqlDbType.NVarChar, 20);
             comm.Parameters["Friend"].Value = friendDpdList.SelectedValue;
         }
-        else
+        else if ((string)genreDpdList.SelectedValue == "All" && (string)friendDpdList.SelectedValue == "All")
         {
             commandString = "SELECT Title, Author, ISBN, Genre, Friend FROM books";
             comm = new SqlCommand(commandString, conn);
+        }
+        else if ((string)genreDpdList.SelectedValue == "All")
+        {
+            commandString = "SELECT Title, Author, ISBN, Genre, Friend FROM books WHERE Friend=@Friend";
+            comm = new SqlCommand(commandString, conn);
+            comm.Parameters.Add("Friend", System.Data.SqlDbType.NVarChar, 20);
+            comm.Parameters["Friend"].Value = friendDpdList.SelectedValue;
+        }
+        else
+        {
+            commandString = "SELECT Title, Author, ISBN, Genre, Friend FROM books WHERE Genre=@Genre";
+            comm = new SqlCommand(commandString, conn);
+            comm.Parameters.Add("Genre", System.Data.SqlDbType.NVarChar, 10);
+            comm.Parameters["Genre"].Value = genreDpdList.SelectedValue;
         }
         
         try
