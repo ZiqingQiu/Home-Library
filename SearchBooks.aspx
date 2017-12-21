@@ -12,6 +12,7 @@
             ConnectionString="<%$ ConnectionStrings:Homelibrary %>" 
             SelectCommand="SELECT DISTINCT [Genre] FROM [Books]">
         </asp:SqlDataSource>   
+        <asp:Label ID="genreLbl" runat="server" Text="Genre: "></asp:Label>
         <asp:DropDownList
             id="genreDpdList"
             runat="server"
@@ -22,11 +23,12 @@
         <asp:ListItem Text="All" Value ="All" Selected="True"></asp:ListItem>
         </asp:DropDownList>
         <br />
-        <br />
+        <h3>AND</h3>
         <asp:SqlDataSource ID="LandFrndNameSqlSource" runat="server" 
             ConnectionString="<%$ ConnectionStrings:Homelibrary %>" 
             SelectCommand="SELECT DISTINCT [Friend] FROM [Books] WHERE Friend IS NOT NULL">
-        </asp:SqlDataSource>   
+        </asp:SqlDataSource> 
+        <asp:Label ID="friendLbl" runat="server" Text="Land Friend's Name: "></asp:Label>
         <asp:DropDownList
             id="friendDpdList"
             runat="server"
@@ -38,11 +40,21 @@
         </asp:DropDownList>
         <br />
         <br />
-        <asp:Button ID="searchBtn" runat="server" Text="Search" />
+        <br />
+        <br />
+        <asp:Button ID="searchBtn" runat="server" Text="Search" OnClick="searchBtn_Click" />
     </div>
 
     <div id="SearchBookResult">
-        Content
+        <asp:GridView ID="resultGrid" runat="server" AutoGenerateColumns="False" EmptyDataText="No Book Found!">
+            <Columns>
+                <asp:BoundField DataField="Title" HeaderText="Book Title" ReadOnly="True" SortExpression="Title" />
+                <asp:BoundField DataField="ISBN" HeaderText="ISBN" ReadOnly="True" SortExpression="ISBN" />
+                <asp:BoundField DataField="Author" HeaderText="Author" ReadOnly="True" SortExpression="Author" />
+                <asp:BoundField DataField="Genre" HeaderText="Genre" ReadOnly="True" SortExpression="Genre" />
+                <asp:BoundField DataField="Friend" HeaderText="Friend's Name" ReadOnly="True" SortExpression="Friend" />
+            </Columns>
+        </asp:GridView>
     </div>
 </asp:Content>
 
