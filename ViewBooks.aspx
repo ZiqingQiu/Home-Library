@@ -1,8 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ViewBooks.aspx.cs" Inherits="ViewBooks" %>
+﻿<%-- Ziqing Qiu 300919236 --%>
+<%-- COMP229 HomeLibrary Assignment --%>
+<%-- ViewBooks.asax 
+     1. display all the books this library have--%>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ViewBooks.aspx.cs" Inherits="ViewBooks" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="pagecontent" Runat="Server">
     <div id="ViewBookContentPosition">
         <asp:GridView ID="booksGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="booksGridView_RowCommand" PageSize="5" EmptyDataText="Current no book in library!">
             <Columns>

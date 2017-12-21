@@ -1,4 +1,10 @@
-﻿<%@ Application Language="C#" %>
+﻿<%-- Ziqing Qiu 300919236 --%>
+<%-- COMP229 HomeLibrary Assignment --%>
+<%-- Global.asax 
+     1. use Session["CurrrentTheme"] to hold sessionId to persist theme
+     2. use Session["CurrrentViewBook"] to hold current view detail book ISBN--%>
+
+<%@ Application Language="C#" %>
 
 <script runat="server">
 
@@ -11,8 +17,6 @@
     void Application_End(object sender, EventArgs e)
     {
         //  Code that runs on application shutdown
-        Application.Clear();
-        Application["books"] = null;
     }
 
     void Application_Error(object sender, EventArgs e)

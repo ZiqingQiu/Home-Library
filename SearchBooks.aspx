@@ -1,9 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="SearchBooks.aspx.cs" Inherits="SearchBooks" %>
+﻿<%-- Ziqing Qiu 300919236 --%>
+<%-- COMP229 HomeLibrary Assignment --%>
+<%-- SearchBooks.asax 
+     1. two dropdownlist use SqlDataSource to retreive ListItem from database--%>
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="SearchBooks.aspx.cs" Inherits="SearchBooks" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="ViewBookContentPosition">
+<asp:Content ID="Content2" ContentPlaceHolderID="pagecontent" Runat="Server">
+    <div id="SearchBookCriteriaPosition">
       <asp:SqlDataSource ID="GenreSqlSource" runat="server" 
             ConnectionString="<%$ ConnectionStrings:Homelibrary %>" 
             SelectCommand="SELECT DISTINCT [Genre] FROM [Books]">
@@ -17,7 +22,8 @@
           AppendDataBoundItems ="True">
         <asp:ListItem Text="All" Value ="All" Selected="True"></asp:ListItem>
       </asp:DropDownList>
-
+      <br />
+      <br />
       <asp:SqlDataSource ID="LandFrndNameSqlSource" runat="server" 
             ConnectionString="<%$ ConnectionStrings:Homelibrary %>" 
             SelectCommand="SELECT DISTINCT [Friend] FROM [Books] WHERE Friend IS NOT NULL">

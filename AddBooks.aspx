@@ -1,10 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AddBooks.aspx.cs" Inherits="AddBooks" %>
+﻿<%-- Ziqing Qiu 300919236 --%>
+<%-- COMP229 HomeLibrary Assignment --%>
+<%-- AddBooks.aspx 
+     1. use control hold ISBN, author, book title info
+     2. control and validator--%>
+
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AddBooks.aspx.cs" Inherits="AddBooks" %>
 <%@ Register TagPrefix="bi" TagName="BookInfo" Src="~/BookBasicBox.ascx" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="pagecontent" Runat="Server">
     <div id="AddBookContentPosition">
         <%-- user control --%>
         <bi:BookInfo ID="bi1" runat="server" />

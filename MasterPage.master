@@ -1,4 +1,9 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%-- Ziqing Qiu 300919236 --%>
+<%-- COMP229 HomeLibrary Assignment --%>
+<%-- MasterPage.asax 
+     1. Define two placeholder, one is for head, one is for body --%>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 
@@ -27,12 +32,10 @@
                     <%# Eval("Text") %>
                 </StaticItemTemplate>
             </asp:Menu>
-        </nav>
-        <div id="content">           
-
-            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-            </asp:ContentPlaceHolder>
+        </nav>   
+        <div id="content">
+        <asp:ContentPlaceHolder id="pagecontent" runat="server">        
+        </asp:ContentPlaceHolder>
         </div>
         <div id="footer">&copy;&nbsp;Copyright Ziqing(James) Qiu COMP 219 ASP.NET Assignment</div>
     </div>

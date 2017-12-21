@@ -1,4 +1,9 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BookBasicBox.ascx.cs" Inherits="BookBasicBox" %>
+﻿<%-- Ziqing Qiu 300919236 --%>
+<%-- COMP229 HomeLibrary Assignment --%>
+<%-- BookBasicBox.ascx 
+     1. use control hold ISBN, author, book title info  --%>
+
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BookBasicBox.ascx.cs" Inherits="BookBasicBox" %>
 
 <asp:Label ID="lblBookName" runat="server" Text="Book Title: "></asp:Label>
 <asp:TextBox ID="txtBookName" runat="server"></asp:TextBox>

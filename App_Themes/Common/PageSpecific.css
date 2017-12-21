@@ -25,3 +25,10 @@
     border-collapse: collapse;
     width: 400px;
 }
+
+#SearchBookCriteriaPosition {
+    position: absolute;
+    top: 100px;
+    width: 100px;
+    left: 10px;
+}
