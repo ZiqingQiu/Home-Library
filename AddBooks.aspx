@@ -17,11 +17,7 @@
         <bi:BookInfo ID="bi1" runat="server" />
         <%-- genre --%>
         <asp:Label ID="lblGenre" runat="server" Text="Genre: "></asp:Label>
-        <asp:DropDownList ID="lbxGenre" runat="server">
-            <asp:ListItem Text="Comedy" Value="Comedy" />
-            <asp:ListItem Text="Drama" Value="Drama" />
-            <asp:ListItem Text="Romance" Value="Romance" />
-        </asp:DropDownList>
+        <asp:TextBox ID="lbxGenre" runat="server"></asp:TextBox>
         <br />
         <br />
         <%-- number of pages --%>

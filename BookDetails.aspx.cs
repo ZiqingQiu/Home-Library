@@ -88,4 +88,17 @@ public partial class BookDetails : System.Web.UI.Page
             conn.Close();
         }
     }
+
+
+
+    protected void bookDetailsView_ModeChanging(object sender, DetailsViewModeEventArgs e)
+    {
+        bookDetailsView.ChangeMode(e.NewMode);
+        BindDetails();
+    }
+
+    protected void bookDetailsView_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
+    {
+        int ISBN = (int)bookDetailsView.DataKey.Value;
+    }
 }
