@@ -15,6 +15,8 @@
                 <asp:TemplateField HeaderText="Book Title" SortExpression="Title">
                     <EditItemTemplate>
                         <asp:TextBox ID="editTitleTxtBox" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
+                        <br />
+                        <asp:RequiredFieldValidator ID="requireTitle" runat="server" ErrorMessage="Book Title can not be empty" ControlToValidate="editTitleTxtBox" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="titleLabel" runat="server" Text='<%# Bind("Title") %>'></asp:Label>
@@ -23,6 +25,8 @@
                 <asp:TemplateField HeaderText="Author Name" SortExpression="Author">
                     <EditItemTemplate>
                         <asp:TextBox ID="editAuthorNameTxtBox" runat="server" Text='<%# Bind("Author") %>'></asp:TextBox>
+                        <br />
+                        <asp:RequiredFieldValidator ID="requireAuthorName" runat="server" ErrorMessage="Author Name can not be empty" ControlToValidate="editAuthorNameTxtBox" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="authorNameLabel" runat="server" Text='<%# Bind("Author") %>'></asp:Label>
@@ -31,6 +35,8 @@
                 <asp:TemplateField HeaderText="ISBN" SortExpression="ISBN">
                     <EditItemTemplate>
                         <asp:TextBox ID="editISBNTxtBox" runat="server" Text='<%# Bind("ISBN") %>'></asp:TextBox>
+                        <br />
+                        <asp:RequiredFieldValidator ID="requireISBN" runat="server" ErrorMessage="ISBN can not be empty" ControlToValidate="editISBNTxtBox" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="ISBNLabel" runat="server" Text='<%# Bind("ISBN") %>'></asp:Label>
@@ -47,6 +53,9 @@
                 <asp:TemplateField HeaderText="Total Pages" SortExpression="Pages">
                     <EditItemTemplate>
                         <asp:TextBox ID="editTotalPagesTxtBox" runat="server" Text='<%# Bind("Pages") %>'></asp:TextBox>
+                        <br />
+                        <asp:RequiredFieldValidator ID="requireNumOfPages" runat="server" ErrorMessage="Page Number can not be empty" ControlToValidate="editTotalPagesTxtBox" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="compareNumOfPages" runat="server" ErrorMessage="Page Number must be a positive integer" ControlToValidate="editTotalPagesTxtBox" Operator="GreaterThan" Type="Integer" ValueToCompare="0" SetFocusOnError="True"></asp:CompareValidator>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="totalPagesLabel" runat="server" Text='<%# Bind("Pages") %>'></asp:Label>

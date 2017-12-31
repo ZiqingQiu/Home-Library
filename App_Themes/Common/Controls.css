@@ -2,10 +2,6 @@
     display: inline-block;
     vertical-align:top;
 }
-.validator {
-    position: relative;
-    left: 153px;
-}
 
 .userinput, .userinputmultiline {
     width: 150px;
