@@ -107,6 +107,7 @@ public partial class BookDetails : System.Web.UI.Page
         string newISBN = ((TextBox)bookDetailsView.FindControl("editISBNTxtBox")).Text;
         //12.31 change genre to dropdownlist
         DropDownList newGenreList = (DropDownList)bookDetailsView.FindControl("editGenreTxtBox");
+        string newGenre = ((TextBox)bookDetailsView.FindControl("newGenreTxtBox")).Text;
         int newTotalPage = Convert.ToInt32(((TextBox)bookDetailsView.FindControl("editTotalPagesTxtBox")).Text);
         //12.31 decided to use radio button list instead of text box
         RadioButtonList newIsLanded = (RadioButtonList)bookDetailsView.FindControl("editIsLandedRdoBtnList");
@@ -136,14 +137,23 @@ public partial class BookDetails : System.Web.UI.Page
         comm.Parameters["Author"].Value = newAuthor;
         //@Genre
         comm.Parameters.Add("Genre", System.Data.SqlDbType.NVarChar, 10);
-        if (String.IsNullOrEmpty(newGenreList.SelectedValue))
+        if (String.IsNullOrEmpty(newGenre))
         {
-            comm.Parameters["Genre"].Value = DBNull.Value;
+            //neither select dropdown list nor input new genre
+            if (String.IsNullOrEmpty(newGenreList.SelectedValue))
+            {
+                comm.Parameters["Genre"].Value = DBNull.Value;
+            }
+            else
+            {
+                comm.Parameters["Genre"].Value = newGenreList.SelectedValue;
+            }
         }
-        else
+        else  //get user added new Genre
         {
-            comm.Parameters["Genre"].Value = newGenreList.SelectedValue;
+            comm.Parameters["Genre"].Value = newGenre;
         }
+
         //@Pages
         comm.Parameters.Add("Pages", System.Data.SqlDbType.Int);
         comm.Parameters["Pages"].Value = newTotalPage;
@@ -194,4 +204,11 @@ public partial class BookDetails : System.Web.UI.Page
         }
     }
 
+
+
+    protected void addGenreLinkBtn_Click(object sender, EventArgs e)
+    {
+        TextBox newGenreTxtBox = (TextBox)bookDetailsView.FindControl("newGenreTxtBox");
+        newGenreTxtBox.Style.Add("display", "block");
+    }
 }

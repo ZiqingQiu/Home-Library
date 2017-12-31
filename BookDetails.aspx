@@ -49,7 +49,13 @@
                             DataSourceID="genereDataSource"
                             DataTextField="Genre" DataValueField="Genre"
                             SelectedValue='<%# Bind("Genre") %>' />
+                        <br />
+                        <asp:LinkButton ID="addGenreLinkBtn" runat="server" OnClick="addGenreLinkBtn_Click">Genre not found?</asp:LinkButton>
+                        <asp:TextBox ID="newGenreTxtBox" runat="server" style="display:none" placeholder="Type new genre here"></asp:TextBox>
                     </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:TextBox ID="editGenreTxtBox" runat="server"></asp:TextBox>                  
+                    </InsertItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="genreLabel" runat="server" Text='<%# Bind("Genre") %>'></asp:Label>
                     </ItemTemplate>
@@ -92,7 +98,7 @@
                         <asp:Label ID="commentsLabel" runat="server" Text='<%# Bind("Comments") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />               
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True"/>               
             </Fields>
             <HeaderTemplate>
                 <%#Eval("Title")%>
