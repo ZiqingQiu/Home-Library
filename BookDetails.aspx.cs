@@ -97,16 +97,18 @@ public partial class BookDetails : System.Web.UI.Page
         BindDetails();
     }
 
-    protected void bookDetailsView_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
+
+    protected void bookDetailsView_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
     {
-        int oldISBN = (int)bookDetailsView.DataKey.Value;
+        string oldISBN = (string)bookDetailsView.DataKey.Value;
         //get user input from each edit text box
         string newTitle = ((TextBox)bookDetailsView.FindControl("editTitleTxtBox")).Text;
         string newAuthor = ((TextBox)bookDetailsView.FindControl("editAuthorNameTxtBox")).Text;
         string newISBN = ((TextBox)bookDetailsView.FindControl("editISBNTxtBox")).Text;
         string newGenre = ((TextBox)bookDetailsView.FindControl("editGenreTxtBox")).Text;
-        string newTotalPage = ((TextBox)bookDetailsView.FindControl("editGenreTxtBox")).Text;
-        string newIsLanded = ((TextBox)bookDetailsView.FindControl("editIsLandedTxtBox")).Text;
+        int newTotalPage = Convert.ToInt32(((TextBox)bookDetailsView.FindControl("editTotalPagesTxtBox")).Text);
+        //12.31 decided to use radio button list instead of text box
+        RadioButtonList newIsLanded = (RadioButtonList)bookDetailsView.FindControl("editIsLandedRdoBtnList");
         string newFriendName = ((TextBox)bookDetailsView.FindControl("editFriendNameTxtBox")).Text;
         string newComments = ((TextBox)bookDetailsView.FindControl("editCommentsTxtBox")).Text;
 
@@ -118,7 +120,7 @@ public partial class BookDetails : System.Web.UI.Page
         string connectionString = ConfigurationManager.ConnectionStrings["Homelibrary"].ConnectionString;
         conn = new SqlConnection(connectionString);
         comm = new SqlCommand("UPDATE books SET " +
-            "ISBN=@ISBN, Title=@Title, Author=@Author, Genre=@Genre, Pages=@Pages, Landed=@Landed, Friend=@Friend, Comments=@Comments)" +
+            "ISBN=@ISBN, Title=@Title, Author=@Author, Genre=@Genre, Pages=@Pages, Landed=@Landed, Friend=@Friend, Comments=@Comments " +
             "WHERE ISBN=@oldISBN", conn);
         //@ISBN
         comm.Parameters.Add("ISBN", System.Data.SqlDbType.NVarChar, 13);
@@ -127,27 +129,26 @@ public partial class BookDetails : System.Web.UI.Page
         comm.Parameters["oldISBN"].Value = oldISBN;
         //@Title
         comm.Parameters.Add("Title", System.Data.SqlDbType.NVarChar, 20);
-        comm.Parameters["Title"].Value = bi1.BookName;
+        comm.Parameters["Title"].Value = newTitle;
         //@Author
         comm.Parameters.Add("Author", System.Data.SqlDbType.NVarChar, 20);
-        comm.Parameters["Author"].Value = bi1.AuthorName;
+        comm.Parameters["Author"].Value = newAuthor;
         //@Genre
         comm.Parameters.Add("Genre", System.Data.SqlDbType.NVarChar, 10);
-        if (String.IsNullOrEmpty(lbxGenre.Text))
+        if (String.IsNullOrEmpty(newGenre))
         {
             comm.Parameters["Genre"].Value = DBNull.Value;
         }
         else
         {
-            comm.Parameters["Genre"].Value = lbxGenre.Text;
+            comm.Parameters["Genre"].Value = newGenre;
         }
-
         //@Pages
         comm.Parameters.Add("Pages", System.Data.SqlDbType.Int);
-        comm.Parameters["Pages"].Value = txtNumOfPages.Text;
+        comm.Parameters["Pages"].Value = newTotalPage;
         //@Landed
         comm.Parameters.Add("Landed", System.Data.SqlDbType.Char, 1);
-        if (rdoLanded.Checked)
+        if (newIsLanded.SelectedIndex == 0)
         {
             comm.Parameters["Landed"].Value = 'Y';
         }
@@ -157,40 +158,39 @@ public partial class BookDetails : System.Web.UI.Page
         }
         //@Friend
         comm.Parameters.Add("Friend", System.Data.SqlDbType.NVarChar, 20);
-        if (String.IsNullOrEmpty(txtLandFriName.Text))
+        if (String.IsNullOrEmpty(newFriendName))
         {
             comm.Parameters["Friend"].Value = DBNull.Value;
         }
         else
         {
-            comm.Parameters["Friend"].Value = txtLandFriName.Text;
+            comm.Parameters["Friend"].Value = newFriendName;
         }
         //@Comments
         comm.Parameters.Add("Comments", System.Data.SqlDbType.NVarChar, 50);
-        if (String.IsNullOrEmpty(txtComments.Text))
+        if (String.IsNullOrEmpty(newComments))
         {
             comm.Parameters["Comments"].Value = DBNull.Value;
         }
         else
         {
-            comm.Parameters["Comments"].Value = txtComments.Text;
+            comm.Parameters["Comments"].Value = newComments;
         }
 
         try
         {
             conn.Open();
             comm.ExecuteNonQuery();
-            Response.Redirect("AddBooks.aspx");
+            Response.Redirect("ViewBooks.aspx");
         }
         catch
         {
-            Response.Write("Error adding new book.");
+            Response.Write("Error updating this book!!!.");
         }
         finally
         {
             conn.Close();
         }
-
-
     }
+
 }

@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pagecontent" Runat="Server">
     <div id="ViewBookContentPosition">
-        <asp:DetailsView ID="bookDetailsView" runat="server" AutoGenerateRows="False" OnItemDeleting="bookDetailsView_ItemDeleting" OnItemUpdated="bookDetailsView_ItemUpdated" OnModeChanging="bookDetailsView_ModeChanging">
+        <asp:DetailsView ID="bookDetailsView" runat="server" AutoGenerateRows="False" OnItemDeleting="bookDetailsView_ItemDeleting" OnModeChanging="bookDetailsView_ModeChanging" OnItemUpdating="bookDetailsView_ItemUpdating">
             <Fields>
                 <asp:TemplateField HeaderText="Book Title" SortExpression="Title">
                     <EditItemTemplate>
@@ -54,7 +54,10 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Is Landed" SortExpression="Landed">
                     <EditItemTemplate>
-                        <asp:TextBox ID="editIsLandedTxtBox" runat="server" Text='<%# Bind("Landed") %>'></asp:TextBox>
+                        <asp:RadioButtonList ID="editIsLandedRdoBtnList" runat="server">
+                            <asp:ListItem Value ="0" Selected ="True">Y</asp:ListItem>
+                            <asp:ListItem Value ="1">N</asp:ListItem>
+                        </asp:RadioButtonList>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="isLandedLabel" runat="server" Text='<%# Bind("Landed") %>'></asp:Label>
