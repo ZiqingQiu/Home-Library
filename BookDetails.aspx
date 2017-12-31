@@ -10,6 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pagecontent" Runat="Server">
     <div id="ViewBookContentPosition">
+        <asp:SqlDataSource ID="genereDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:Homelibrary %>" SelectCommand="SELECT DISTINCT [Genre] FROM [Books] WHERE ([Genre] IS NOT NULL)"></asp:SqlDataSource>
         <asp:DetailsView ID="bookDetailsView" runat="server" AutoGenerateRows="False" OnItemDeleting="bookDetailsView_ItemDeleting" OnModeChanging="bookDetailsView_ModeChanging" OnItemUpdating="bookDetailsView_ItemUpdating">
             <Fields>
                 <asp:TemplateField HeaderText="Book Title" SortExpression="Title">
@@ -44,7 +45,10 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Genre" SortExpression="Genre">
                     <EditItemTemplate>
-                        <asp:TextBox ID="editGenreTxtBox" runat="server" Text='<%# Bind("Genre") %>'></asp:TextBox>
+                        <asp:DropDownList id="editGenreTxtBox" runat="server"
+                            DataSourceID="genereDataSource"
+                            DataTextField="Genre" DataValueField="Genre"
+                            SelectedValue='<%# Bind("Genre") %>' />
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="genreLabel" runat="server" Text='<%# Bind("Genre") %>'></asp:Label>
