@@ -78,7 +78,7 @@ public partial class AddBooks : System.Web.UI.Page
         //@ISBN
         comm.Parameters.Add("ISBN", System.Data.SqlDbType.NVarChar,13);
         comm.Parameters["ISBN"].Value = bi1.ISBN;
-        //@Name
+        //@Title
         comm.Parameters.Add("Title", System.Data.SqlDbType.NVarChar, 20);
         comm.Parameters["Title"].Value = bi1.BookName;
         //@Author
