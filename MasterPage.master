@@ -26,12 +26,27 @@
 		    </div>
         </div>
         <nav id="navigation" runat="server">
-            <asp:SiteMapDataSource ID="HomeLibrarySitemap" runat="server" ShowStartingNode="False" />
-            <asp:Menu ID="HomeLibrafyMenu" runat="server" DataSourceID="HomeLibrarySitemap">
-                <StaticItemTemplate>
-                    <%# Eval("Text") %>
-                </StaticItemTemplate>
-            </asp:Menu>
+            <asp:LoginView ID="LoginView" runat="server">
+                <LoggedInTemplate>
+                    <asp:LoginName ID="loginName" runat="server" FormatString="Hello, {0}!" />
+                    <asp:LoginStatus ID="loginStatus" runat="server" />
+                    <asp:SiteMapDataSource ID="HomeLibrarySitemap" runat="server" ShowStartingNode="False" />
+                    <asp:Menu ID="HomeLibrafyMenu" runat="server" DataSourceID="HomeLibrarySitemap">
+                        <StaticItemTemplate>
+                            <%# Eval("Text") %>
+                        </StaticItemTemplate>
+                    </asp:Menu>
+                </LoggedInTemplate>
+                <AnonymousTemplate>
+                    <asp:LoginStatus ID="loginStatus" runat="server" />
+                    <asp:SiteMapDataSource ID="HomeLibrarySitemap" runat="server" ShowStartingNode="False" />
+                    <asp:Menu ID="HomeLibrafyMenu" runat="server" DataSourceID="HomeLibrarySitemap">
+                        <StaticItemTemplate>
+                            <%# Eval("Text") %>
+                        </StaticItemTemplate>
+                    </asp:Menu>                    
+                </AnonymousTemplate>
+            </asp:LoginView>
         </nav>   
         <div id="content">
         <asp:ContentPlaceHolder id="pagecontent" runat="server">        
