@@ -1,4 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
+﻿<%-- Ziqing Qiu 300919236 --%>
+<%-- COMP229 HomeLibrary Assignment --%>
+<%-- Login.asax 
+<%-- 1.2 add this default page for user to log in --%>
+
+<%@ Page Title="User log in" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

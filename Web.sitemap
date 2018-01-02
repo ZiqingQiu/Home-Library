@@ -11,5 +11,7 @@
         description="Search a Book" />
     <siteMapNode url="~/Setup.aspx" title="Set Theme"
         description="Set website theme" />
+    <siteMapNode url="~/ContactUs.aspx" title="Contact Us"
+        description="Contact Us" />
   </siteMapNode>
 </siteMap>
