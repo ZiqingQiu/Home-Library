@@ -40,7 +40,7 @@
                                 </tr>
                                 <tr>
                                     <td align="center" colspan="2" style="color:Red;">
-                                        <asp:Literal ID="FailureText" runat="server" EnableViewState="False" Text="User Name or Password is not correct!"></asp:Literal>
+                                        <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
                                     </td>
                                 </tr>
                                 <tr>
