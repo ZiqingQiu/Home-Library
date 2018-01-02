@@ -47,7 +47,7 @@
     text-align: left;
 }
 
-.loginStatus {
-    margin-top:auto;
-    margin-bottom:auto;
+.loginStatus, .loginName{
+    position: relative;
+    top: 5px;
 }

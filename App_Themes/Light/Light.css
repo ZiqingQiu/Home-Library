@@ -66,12 +66,9 @@
 }
 
 #logDiv {
-    /*background-color: Chocolate;*/
     background-color: red;
 }
 
-
-
-.loginName {
+.loginStatus, .loginName {
     color: #FFFFFF;
 }

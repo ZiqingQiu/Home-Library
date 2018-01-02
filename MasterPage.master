@@ -10,6 +10,7 @@
 <html>
 <head runat="server">
     <title>COMP229 Assignment 1</title>
+
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -34,9 +35,10 @@
                             <%# Eval("Text") %>
                         </StaticItemTemplate>
                     </asp:Menu>
-                    <div ID="logDiv">
-                        <asp:LoginName ID="loginName" runat="server" FormatString="Hello, {0}!"/>
-                        (<asp:LoginStatus ID="loginStatus" runat="server" />)
+                    <div id="logDiv">
+                        <asp:LoginName ID="loginName" runat="server" FormatString="Hello, {0}!" CssClass="loginName"/>
+                        &nbsp;&nbsp;
+                        <asp:LoginStatus ID="loginStatus" runat="server" CssClass="loginStatus"/>
                     </div>
                 </LoggedInTemplate>
                 <AnonymousTemplate>
@@ -46,7 +48,7 @@
                             <%# Eval("Text") %>
                         </StaticItemTemplate>
                     </asp:Menu> 
-                    <div ID="logDiv">
+                    <div id="logDiv">
                         <asp:LoginStatus ID="loginStatus" runat="server" CssClass="loginStatus"/>
                     </div>
                 </AnonymousTemplate>

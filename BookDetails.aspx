@@ -98,7 +98,16 @@
                         <asp:Label ID="commentsLabel" runat="server" Text='<%# Bind("Comments") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True"/>               
+                <asp:TemplateField ShowHeader="False">
+                    <EditItemTemplate>
+                        <asp:LinkButton ID="updateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                        &nbsp;<asp:LinkButton ID="cancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:LinkButton ID="editButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                        &nbsp;<asp:LinkButton ID="deleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Fields>
             <HeaderTemplate>
                 <%#Eval("Title")%>
