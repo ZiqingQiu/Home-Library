@@ -24,6 +24,7 @@ Default skin template. The following skins are provided as examples only.
 <asp:RequiredFieldValidator runat="server" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
 <asp:CompareValidator runat="server" Display="Dynamic" ForeColor="Red"></asp:CompareValidator>
 <asp:CustomValidator runat="server" Display="Dynamic" ForeColor="Red"></asp:CustomValidator>
+<asp:RegularExpressionValidator runat="server"  Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
 
 <asp:GridView runat="server" CssClass="GridMain" CellPadding="4" GridLines="None">
     <RowStyle CssClass="GridRow" />
