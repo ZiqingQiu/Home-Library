@@ -27,24 +27,28 @@
         </div>
         <nav id="navigation" runat="server">
             <asp:LoginView ID="LoginView" runat="server">
-                <LoggedInTemplate>
-                    <asp:LoginName ID="loginName" runat="server" FormatString="Hello, {0}!" />
-                    <asp:LoginStatus ID="loginStatus" runat="server" />
-                    <asp:SiteMapDataSource ID="HomeLibrarySitemap" runat="server" ShowStartingNode="False" />
+                <LoggedInTemplate>                                        
+                    <asp:SiteMapDataSource ID="HomeLibrarySitemap" runat="server" ShowStartingNode="False" SiteMapProvider="loginSiteMap" />
                     <asp:Menu ID="HomeLibrafyMenu" runat="server" DataSourceID="HomeLibrarySitemap">
                         <StaticItemTemplate>
                             <%# Eval("Text") %>
                         </StaticItemTemplate>
                     </asp:Menu>
+                    <div ID="logDiv">
+                        <asp:LoginName ID="loginName" runat="server" FormatString="Hello, {0}!"/>
+                        (<asp:LoginStatus ID="loginStatus" runat="server" />)
+                    </div>
                 </LoggedInTemplate>
                 <AnonymousTemplate>
-                    <asp:LoginStatus ID="loginStatus" runat="server" />
-                    <asp:SiteMapDataSource ID="HomeLibrarySitemap" runat="server" ShowStartingNode="False" />
-                    <asp:Menu ID="HomeLibrafyMenu" runat="server" DataSourceID="HomeLibrarySitemap">
+                    <asp:SiteMapDataSource ID="AnoHomeLibrarySitemap" runat="server" ShowStartingNode="False" SiteMapProvider="anonySiteMap"/>
+                    <asp:Menu ID="HomeLibrafyMenu" runat="server" DataSourceID="AnoHomeLibrarySitemap">
                         <StaticItemTemplate>
                             <%# Eval("Text") %>
                         </StaticItemTemplate>
-                    </asp:Menu>                    
+                    </asp:Menu> 
+                    <div ID="logDiv">
+                        <asp:LoginStatus ID="loginStatus" runat="server" CssClass="loginStatus"/>
+                    </div>
                 </AnonymousTemplate>
             </asp:LoginView>
         </nav>   

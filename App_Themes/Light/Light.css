@@ -15,10 +15,10 @@
     color: #FFFFFF;
 }
 
-    #navigation li a:hover {
-        background-color: #FFFFFF;
-        color: chocolate;
-    }
+#navigation li a:hover {
+    background-color: #FFFFFF;
+    color: chocolate;
+}
 
 #content {
     background-color: cornsilk;
@@ -33,11 +33,12 @@
     background-color: peru;
     color: #FFFFFF;
 }
-    .btn:hover {
-        border-color: #FFFFFF;
-        background-color: #FFFFFF;
-        color: peru;
-    }
+
+.btn:hover {
+    border-color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: peru;
+}
 
 #viewbooktable, #viewbooktable tr, #viewbooktable td {
     border: 1px solid peru;
@@ -53,8 +54,7 @@
 }
 
 .GridRow {
-    color: Chocolate;
-    
+    color: Chocolate;   
 }
 
 .GridSelectedRow {
@@ -63,4 +63,15 @@
 
 .GridHeader {
     background-color: Chocolate;
+}
+
+#logDiv {
+    /*background-color: Chocolate;*/
+    background-color: red;
+}
+
+
+
+.loginName {
+    color: #FFFFFF;
 }
