@@ -1,9 +1,4 @@
-﻿
-#allPage {
-    color: peru;
-}
-
-.banner-head {
+﻿.banner-head {
     color: #FFFFFF;
 }
 
@@ -22,6 +17,7 @@
 
 #content {
     background-color: cornsilk;
+    color: peru;
 }
 
 .userinput, .userinputmultiline {

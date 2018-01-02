@@ -36,9 +36,9 @@
                         </StaticItemTemplate>
                     </asp:Menu>
                     <div id="logDiv">
-                        <asp:LoginName ID="loginName" runat="server" FormatString="Hello, {0}!" CssClass="loginName"/>
+                        <asp:LoginName ID="idloginName" runat="server" FormatString="Hello, {0}!" CssClass="loginName"/>
                         &nbsp;&nbsp;
-                        <asp:LoginStatus ID="loginStatus" runat="server" CssClass="loginStatus"/>
+                        <asp:LoginStatus ID="idloginStatus" runat="server" CssClass="loginStatus"/>
                     </div>
                 </LoggedInTemplate>
                 <AnonymousTemplate>
@@ -49,7 +49,9 @@
                         </StaticItemTemplate>
                     </asp:Menu> 
                     <div id="logDiv">
-                        <asp:LoginStatus ID="loginStatus" runat="server" CssClass="loginStatus"/>
+                        <asp:LoginStatus ID="idloginStatus" runat="server" CssClass="loginStatus"/>
+                        <span Class="loginStatus"> or </span>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="loginStatus" OnClick="LinkButton1_Click">Register</asp:LinkButton>
                     </div>
                 </AnonymousTemplate>
             </asp:LoginView>

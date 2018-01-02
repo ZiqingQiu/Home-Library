@@ -29,7 +29,7 @@ public partial class BookDetails : System.Web.UI.Page
         }
         LinkButton editLinkButton = (LinkButton)bookDetailsView.FindControl("editButton");
         LinkButton deleteLinkButton = (LinkButton)bookDetailsView.FindControl("deleteButton");
-        if (!User.IsInRole("Admin"))
+        if (!HttpContext.Current.User.IsInRole("Admin"))
         {
             editLinkButton.Visible = false;
             deleteLinkButton.Visible = false;

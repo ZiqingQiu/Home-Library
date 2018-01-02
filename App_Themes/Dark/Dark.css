@@ -1,9 +1,4 @@
-﻿
-#allPage {
-    color: darkslategrey;
-}
-
-.banner-head {
+﻿.banner-head {
     color: #000000;
 }
 
@@ -11,17 +6,18 @@
     background-color: silver;
 }
 
-    #navigation li a {
-        color: #000000;
-    }
+#navigation li a {
+    color: #000000;
+}
 
-        #navigation li a:hover {
-            background-color: #000000;
-            color: ivory;
-        }
+#navigation li a:hover {
+    background-color: #000000;
+    color: ivory;
+}
 
 #content {
     background-color: azure;
+    color: darkslategrey;
 }
 
 .userinput, .userinputmultiline {
@@ -34,11 +30,11 @@
     color: #000000;
 }
 
-    .btn:hover {
-        border-color: #000000;
-        background-color: #000000;
-        color: darkslategrey;
-    }
+.btn:hover {
+    border-color: #000000;
+    background-color: #000000;
+    color: darkslategrey;
+}
 
 #viewbooktable, #viewbooktable tr, #viewbooktable td {
     border: 1px solid darkslategrey;
