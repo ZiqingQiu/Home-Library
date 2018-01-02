@@ -9,7 +9,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pagecontent" Runat="Server">
     <div id="AddBookContentPosition">
-    Contact Us
+        Your name:
+        <asp:TextBox ID="txtYourName" runat="server"/><br />
+        <asp:RequiredFieldValidator ID="RequiredName" runat="server" ErrorMessage="*" ControlToValidate="txtYourName"/><br />
+        
+        Your email address:
+        <asp:TextBox ID="txtYourEmail" runat="server"/>
+        <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ErrorMessage="*" ControlToValidate="txtYourEmail"/><br />       
+        <asp:RegularExpressionValidator runat="server" ID="RegularExpressionEmail" SetFocusOnError="true" ErrorMessage="Example: username@gmail.com" ControlToValidate="txtYourEmail"
+            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic" /><br />
+
+        Your Comments:
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ControlToValidate="Comments" /><br />
+        <asp:TextBox ID="Comments" runat="server" TextMode="MultiLine" Rows="10" />
+    
+        <br />
+        <br />
+        <asp:Button ID="btnSubmit" runat="server" Text="Send"  OnClick="Button1_Click" ValidationGroup="save" />
+    
     </div>
 </asp:Content>
 
