@@ -4,7 +4,7 @@
 <%-- 1.2 add this page for recieving customer feedback and sending confirm emails --%>
 
 <%@ Page Title="Contact Us" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ContactUs.aspx.cs" Inherits="ContactUs" %>
-
+<%@ Import Namespace="System.Web.Mail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="pagecontent" Runat="Server">
@@ -29,6 +29,7 @@
         <br />
         <asp:Button ID="btnSubmit" runat="server" Text="Send"  OnClick="Button1_Click"/>
  
+        <asp:Label ID="statusLabel" runat="server" Text=""></asp:Label>
     </div>
 </asp:Content>
 
