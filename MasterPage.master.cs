@@ -14,6 +14,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
-        Response.Redirect("NewUserRegister.aspx");
+        Server.Transfer("NewUserRegister.aspx");
     }
 }

@@ -10,22 +10,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="pagecontent" Runat="Server">
     <div id="AddBookContentPosition">
         <asp:Label ID="lblName" runat="server" Text="Your name: "></asp:Label>       
-        <asp:TextBox ID="txtYourName" runat="server"/><br />
-        <asp:RequiredFieldValidator ID="RequiredName" runat="server" ErrorMessage="*" ControlToValidate="txtYourName"/><br />
-        
+        <asp:TextBox ID="txtYourName" runat="server"/>
+        <asp:RequiredFieldValidator ID="RequiredName" runat="server" ErrorMessage="*" ControlToValidate="txtYourName"/>
+        <br />
+        <br />
+
         <asp:Label ID="lblEmail" runat="server" Text="Email address: "></asp:Label>  
         <asp:TextBox ID="txtYourEmail" runat="server"/>
         <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ErrorMessage="*" ControlToValidate="txtYourEmail"/><br />       
         <asp:RegularExpressionValidator runat="server" ID="RegularExpressionEmail" SetFocusOnError="true" ErrorMessage="Invalid email format" ControlToValidate="txtYourEmail"
-            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/><br />
+            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
+        <br />
 
         <asp:Label ID="lblComments" runat="server" Text="Comments: "></asp:Label>  
         <asp:TextBox ID="txtComments" runat="server" TextMode="MultiLine" Rows="4" SkinID="textboxmultiline"/>
         <asp:RequiredFieldValidator ID="RequiredComments" runat="server" ErrorMessage="*" ControlToValidate="txtComments" />       
         <br />
         <br />
-        <asp:Button ID="btnSubmit" runat="server" Text="Send"  OnClick="Button1_Click" ValidationGroup="save" />
-    
+        <asp:Button ID="btnSubmit" runat="server" Text="Send"  OnClick="Button1_Click"/>
+ 
     </div>
 </asp:Content>
 

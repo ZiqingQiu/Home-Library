@@ -14,7 +14,7 @@
                 <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
                     <tr>
                         <td>
-                            <table cellpadding="0">
+                            <table cellpadding="10">
                                 <tr>
                                     <td align="center" colspan="2"><h1>Log In</h1></td>
                                 </tr>
