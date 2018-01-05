@@ -7,6 +7,7 @@
 
 <%@ Page Title="Add Books" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AddBooks.aspx.cs" Inherits="AddBooks" %>
 <%@ Register TagPrefix="bi" TagName="BookInfo" Src="~/BookBasicBox.ascx" %>
+<%@ Register TagPrefix="ag" TagName="AddGenre" Src="~/AddGenre.ascx" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
@@ -19,6 +20,7 @@
         <asp:Label ID="lblGenre" runat="server" Text="Genre: "></asp:Label>
         <asp:TextBox ID="lbxGenre" runat="server"></asp:TextBox>
         <br />
+        <ag:AddGenre ID="ag1" runat="server" />
         <br />
         <%-- number of pages --%>
         <asp:Label ID="lblNumOfPages" runat="server" Text="Number Of Pages: "></asp:Label>
