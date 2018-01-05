@@ -17,7 +17,7 @@
     DataSourceID="genereDataSource">
 </asp:DropDownList>
 <br />
-<span style="position:relative; left:155px">
+<span style="position:relative;">
 <asp:LinkButton ID="addGenreLinkBtn" runat="server" OnClick="addGenreLinkBtn_Click" CausesValidation="False">Genre not found?</asp:LinkButton>
 <asp:TextBox ID="newGenreTxtBox" runat="server" style="display:none" placeholder="Type new genre here"></asp:TextBox>
 </span>

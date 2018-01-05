@@ -18,7 +18,7 @@
         <bi:BookInfo ID="bi1" runat="server" />
         <%-- genre --%>
         <asp:Label ID="lblGenre" runat="server" Text="Genre: "></asp:Label>
-        <ag:AddGenre ID="ag1" runat="server" />
+        <ag:AddGenre ID="ag1" runat="server" style="position:relative; left:155px;"/>
         <br />
         <%-- number of pages --%>
         <asp:Label ID="lblNumOfPages" runat="server" Text="Number Of Pages: "></asp:Label>

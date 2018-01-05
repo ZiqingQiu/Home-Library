@@ -75,8 +75,8 @@ public partial class ViewBooks : System.Web.UI.Page
     {
         if (e.CommandName == "MoreDetailsPlease")
         {
-            Session["CurrrentViewBook"] = e.CommandArgument;
-            Response.Redirect("BookDetails.aspx");          
+            string isbn = e.CommandArgument as string;
+            Response.Redirect("BookDetails.aspx?isbn=" + isbn);          
         }
     }
 }

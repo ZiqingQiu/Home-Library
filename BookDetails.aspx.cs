@@ -57,7 +57,7 @@ public partial class BookDetails : System.Web.UI.Page
 
         //@ISBN
         comm.Parameters.Add("@ISBN", System.Data.SqlDbType.NVarChar, 13);
-        comm.Parameters["@ISBN"].Value = Session["CurrrentViewBook"] as string;
+        comm.Parameters["@ISBN"].Value = Request.QueryString["isbn"];
 
         try
         {

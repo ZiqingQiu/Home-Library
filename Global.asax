@@ -38,7 +38,6 @@
         // is set to InProc in the Web.config file. If session mode is set to StateServer 
         // or SQLServer, the event is not raised.
         Session["CurrrentTheme"] = null;
-        Session["CurrrentViewBook"] = null;
     }
 
     void CheckSessionId()
