@@ -86,15 +86,7 @@ public partial class AddBooks : System.Web.UI.Page
         comm.Parameters["Author"].Value = bi1.AuthorName;
         //@Genre
         comm.Parameters.Add("Genre", System.Data.SqlDbType.NVarChar, 10);
-        if (String.IsNullOrEmpty(lbxGenre.Text))
-        {
-            comm.Parameters["Genre"].Value = DBNull.Value;
-        }
-        else
-        {
-            comm.Parameters["Genre"].Value = lbxGenre.Text;
-        }
-
+        comm.Parameters["Genre"].Value = ag1.Genre;
         //@Pages
         comm.Parameters.Add("Pages", System.Data.SqlDbType.Int);
         comm.Parameters["Pages"].Value = txtNumOfPages.Text;
@@ -142,9 +134,7 @@ public partial class AddBooks : System.Web.UI.Page
         finally
         {
             conn.Close();
-        }
-
-       
+        }     
     }
 
 }

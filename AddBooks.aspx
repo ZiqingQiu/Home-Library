@@ -18,8 +18,6 @@
         <bi:BookInfo ID="bi1" runat="server" />
         <%-- genre --%>
         <asp:Label ID="lblGenre" runat="server" Text="Genre: "></asp:Label>
-        <asp:TextBox ID="lbxGenre" runat="server"></asp:TextBox>
-        <br />
         <ag:AddGenre ID="ag1" runat="server" />
         <br />
         <%-- number of pages --%>
@@ -50,6 +48,8 @@
         <br />
         <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click"/>
         <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="False" OnClick="btnCancel_Click" />
+        <br />
+
     </div>
 </asp:Content>
 
