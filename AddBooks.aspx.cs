@@ -43,6 +43,7 @@ public partial class AddBooks : System.Web.UI.Page
             //add book
             AddBook();
             btnSave.Text = "Valid";
+            Response.Write("<script>alert('add book successful');</script>");
         }
         else
         {
@@ -76,49 +77,49 @@ public partial class AddBooks : System.Web.UI.Page
         conn = new SqlConnection(connectionString);
         comm = new SqlCommand("INSERT INTO books VALUES(@ISBN, @Title, @Author, @Genre, @Pages, @Landed, @Friend, @Comments)", conn);
         //@ISBN
-        comm.Parameters.Add("ISBN", System.Data.SqlDbType.NVarChar,13);
-        comm.Parameters["ISBN"].Value = bi1.ISBN;
+        comm.Parameters.Add("@ISBN", System.Data.SqlDbType.NVarChar,13);
+        comm.Parameters["@ISBN"].Value = bi1.ISBN;
         //@Title
-        comm.Parameters.Add("Title", System.Data.SqlDbType.NVarChar, 20);
-        comm.Parameters["Title"].Value = bi1.BookName;
+        comm.Parameters.Add("@Title", System.Data.SqlDbType.NVarChar, 20);
+        comm.Parameters["@Title"].Value = bi1.BookName;
         //@Author
-        comm.Parameters.Add("Author", System.Data.SqlDbType.NVarChar, 20);
-        comm.Parameters["Author"].Value = bi1.AuthorName;
+        comm.Parameters.Add("@Author", System.Data.SqlDbType.NVarChar, 20);
+        comm.Parameters["@Author"].Value = bi1.AuthorName;
         //@Genre
-        comm.Parameters.Add("Genre", System.Data.SqlDbType.NVarChar, 10);
-        comm.Parameters["Genre"].Value = ag1.Genre;
+        comm.Parameters.Add("@Genre", System.Data.SqlDbType.NVarChar, 10);
+        comm.Parameters["@Genre"].Value = ag1.Genre;
         //@Pages
-        comm.Parameters.Add("Pages", System.Data.SqlDbType.Int);
-        comm.Parameters["Pages"].Value = txtNumOfPages.Text;
+        comm.Parameters.Add("@Pages", System.Data.SqlDbType.Int);
+        comm.Parameters["@Pages"].Value = txtNumOfPages.Text;
         //@Landed
-        comm.Parameters.Add("Landed", System.Data.SqlDbType.Char, 1);
+        comm.Parameters.Add("@Landed", System.Data.SqlDbType.Char, 1);
         if (rdoLanded.Checked)
         {
-            comm.Parameters["Landed"].Value = 'Y';
+            comm.Parameters["@Landed"].Value = 'Y';
         }
         else
         {
-            comm.Parameters["Landed"].Value = 'N';
+            comm.Parameters["@Landed"].Value = 'N';
         }
         //@Friend
-        comm.Parameters.Add("Friend", System.Data.SqlDbType.NVarChar, 20);
+        comm.Parameters.Add("@Friend", System.Data.SqlDbType.NVarChar, 20);
         if (String.IsNullOrEmpty(txtLandFriName.Text))
         {
-            comm.Parameters["Friend"].Value = DBNull.Value;
+            comm.Parameters["@Friend"].Value = DBNull.Value;
         }
         else
         {
-            comm.Parameters["Friend"].Value = txtLandFriName.Text;
+            comm.Parameters["@Friend"].Value = txtLandFriName.Text;
         }
         //@Comments
-        comm.Parameters.Add("Comments", System.Data.SqlDbType.NVarChar, 50);
+        comm.Parameters.Add("@Comments", System.Data.SqlDbType.NVarChar, 50);
         if (String.IsNullOrEmpty(txtComments.Text))
         {
-            comm.Parameters["Comments"].Value = DBNull.Value;
+            comm.Parameters["@Comments"].Value = DBNull.Value;
         }
         else
         {
-            comm.Parameters["Comments"].Value = txtComments.Text;
+            comm.Parameters["@Comments"].Value = txtComments.Text;
         }
 
         try

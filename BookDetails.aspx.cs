@@ -29,16 +29,20 @@ public partial class BookDetails : System.Web.UI.Page
         }
         LinkButton editLinkButton = (LinkButton)bookDetailsView.FindControl("editButton");
         LinkButton deleteLinkButton = (LinkButton)bookDetailsView.FindControl("deleteButton");
-        if (!HttpContext.Current.User.IsInRole("Admin"))
+        if (bookDetailsView.CurrentMode == DetailsViewMode.ReadOnly)
         {
-            editLinkButton.Visible = false;
-            deleteLinkButton.Visible = false;
+            if (!HttpContext.Current.User.IsInRole("Admin"))
+            {
+                editLinkButton.Visible = false;
+                deleteLinkButton.Visible = false;
+            }
+            else
+            {
+                editLinkButton.Visible = true;
+                deleteLinkButton.Visible = true;
+            }
         }
-        else
-        {
-            editLinkButton.Visible = true;
-            deleteLinkButton.Visible = true;
-        }
+
     }
 
     private void BindDetails()
@@ -52,8 +56,8 @@ public partial class BookDetails : System.Web.UI.Page
         comm = new SqlCommand("SELECT * FROM books WHERE ISBN=@ISBN", conn);
 
         //@ISBN
-        comm.Parameters.Add("ISBN", System.Data.SqlDbType.NVarChar, 13);
-        comm.Parameters["ISBN"].Value = Session["CurrrentViewBook"] as string;
+        comm.Parameters.Add("@ISBN", System.Data.SqlDbType.NVarChar, 13);
+        comm.Parameters["@ISBN"].Value = Session["CurrrentViewBook"] as string;
 
         try
         {
@@ -83,8 +87,8 @@ public partial class BookDetails : System.Web.UI.Page
         comm = new SqlCommand("DELETE FROM books WHERE ISBN=@ISBN", conn);
 
         //@ISBN
-        comm.Parameters.Add("ISBN", System.Data.SqlDbType.NVarChar, 13);
-        comm.Parameters["ISBN"].Value = ISBN;
+        comm.Parameters.Add("@ISBN", System.Data.SqlDbType.NVarChar, 13);
+        comm.Parameters["@ISBN"].Value = ISBN;
 
         try
         {
@@ -137,67 +141,67 @@ public partial class BookDetails : System.Web.UI.Page
             "ISBN=@ISBN, Title=@Title, Author=@Author, Genre=@Genre, Pages=@Pages, Landed=@Landed, Friend=@Friend, Comments=@Comments " +
             "WHERE ISBN=@oldISBN", conn);
         //@ISBN
-        comm.Parameters.Add("ISBN", System.Data.SqlDbType.NVarChar, 13);
-        comm.Parameters["ISBN"].Value = newISBN;
-        comm.Parameters.Add("oldISBN", System.Data.SqlDbType.NVarChar, 13);
-        comm.Parameters["oldISBN"].Value = oldISBN;
+        comm.Parameters.Add("@ISBN", System.Data.SqlDbType.NVarChar, 13);
+        comm.Parameters["@ISBN"].Value = newISBN;
+        comm.Parameters.Add("@oldISBN", System.Data.SqlDbType.NVarChar, 13);
+        comm.Parameters["@oldISBN"].Value = oldISBN;
         //@Title
-        comm.Parameters.Add("Title", System.Data.SqlDbType.NVarChar, 20);
-        comm.Parameters["Title"].Value = newTitle;
+        comm.Parameters.Add("@Title", System.Data.SqlDbType.NVarChar, 20);
+        comm.Parameters["@Title"].Value = newTitle;
         //@Author
-        comm.Parameters.Add("Author", System.Data.SqlDbType.NVarChar, 20);
-        comm.Parameters["Author"].Value = newAuthor;
+        comm.Parameters.Add("@Author", System.Data.SqlDbType.NVarChar, 20);
+        comm.Parameters["@Author"].Value = newAuthor;
         //@Genre
-        comm.Parameters.Add("Genre", System.Data.SqlDbType.NVarChar, 10);
+        comm.Parameters.Add("@Genre", System.Data.SqlDbType.NVarChar, 10);
         if (String.IsNullOrEmpty(newGenre))
         {
             //neither select dropdown list nor input new genre
             if (String.IsNullOrEmpty(newGenreList.SelectedValue))
             {
-                comm.Parameters["Genre"].Value = DBNull.Value;
+                comm.Parameters["@Genre"].Value = DBNull.Value;
             }
             else
             {
-                comm.Parameters["Genre"].Value = newGenreList.SelectedValue;
+                comm.Parameters["@Genre"].Value = newGenreList.SelectedValue;
             }
         }
         else  //get user added new Genre
         {
-            comm.Parameters["Genre"].Value = newGenre;
+            comm.Parameters["@Genre"].Value = newGenre;
         }
 
         //@Pages
-        comm.Parameters.Add("Pages", System.Data.SqlDbType.Int);
-        comm.Parameters["Pages"].Value = newTotalPage;
+        comm.Parameters.Add("@Pages", System.Data.SqlDbType.Int);
+        comm.Parameters["@Pages"].Value = newTotalPage;
         //@Landed
-        comm.Parameters.Add("Landed", System.Data.SqlDbType.Char, 1);
+        comm.Parameters.Add("@Landed", System.Data.SqlDbType.Char, 1);
         if (newIsLanded.SelectedIndex == 0)
         {
-            comm.Parameters["Landed"].Value = 'Y';
+            comm.Parameters["@Landed"].Value = 'Y';
         }
         else
         {
-            comm.Parameters["Landed"].Value = 'N';
+            comm.Parameters["@Landed"].Value = 'N';
         }
         //@Friend
-        comm.Parameters.Add("Friend", System.Data.SqlDbType.NVarChar, 20);
+        comm.Parameters.Add("@Friend", System.Data.SqlDbType.NVarChar, 20);
         if (String.IsNullOrEmpty(newFriendName))
         {
-            comm.Parameters["Friend"].Value = DBNull.Value;
+            comm.Parameters["@Friend"].Value = DBNull.Value;
         }
         else
         {
-            comm.Parameters["Friend"].Value = newFriendName;
+            comm.Parameters["@Friend"].Value = newFriendName;
         }
         //@Comments
-        comm.Parameters.Add("Comments", System.Data.SqlDbType.NVarChar, 50);
+        comm.Parameters.Add("@Comments", System.Data.SqlDbType.NVarChar, 50);
         if (String.IsNullOrEmpty(newComments))
         {
-            comm.Parameters["Comments"].Value = DBNull.Value;
+            comm.Parameters["@Comments"].Value = DBNull.Value;
         }
         else
         {
-            comm.Parameters["Comments"].Value = newComments;
+            comm.Parameters["@Comments"].Value = newComments;
         }
 
         try
@@ -208,7 +212,7 @@ public partial class BookDetails : System.Web.UI.Page
         }
         catch
         {
-            Response.Write("Error updating this book!!!.");
+            Response.Write("Error updating this book!!!");
         }
         finally
         {

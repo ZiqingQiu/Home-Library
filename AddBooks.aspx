@@ -5,7 +5,7 @@
      2. control and validator--%>
 
 
-<%@ Page Title="Add Books" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AddBooks.aspx.cs" Inherits="AddBooks" %>
+<%@ Page Title="Add Books" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AddBooks.aspx.cs" Inherits="AddBooks"%>
 <%@ Register TagPrefix="bi" TagName="BookInfo" Src="~/BookBasicBox.ascx" %>
 <%@ Register TagPrefix="ag" TagName="AddGenre" Src="~/AddGenre.ascx" %>
 
@@ -48,8 +48,6 @@
         <br />
         <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click"/>
         <asp:Button ID="btnCancel" runat="server" Text="Cancel" CausesValidation="False" OnClick="btnCancel_Click" />
-        <br />
-
     </div>
 </asp:Content>
 
