@@ -5,6 +5,7 @@
      2. use DetailView to display perticular book info--%>
 
 <%@ Page Title="Book Details" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="BookDetails.aspx.cs" Inherits="BookDetails" %>
+<%@ Register TagPrefix="ag" TagName="AddGenre" Src="~/AddGenre.ascx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -45,17 +46,8 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Genre" SortExpression="Genre">
                     <EditItemTemplate>
-                        <asp:DropDownList id="editGenreTxtBox" runat="server"
-                            DataSourceID="genereDataSource"
-                            DataTextField="Genre" DataValueField="Genre"
-                            SelectedValue='<%# Bind("Genre") %>' />
-                        <br />
-                        <asp:LinkButton ID="addGenreLinkBtn" runat="server" OnClick="addGenreLinkBtn_Click">Genre not found?</asp:LinkButton>
-                        <asp:TextBox ID="newGenreTxtBox" runat="server" style="display:none" placeholder="Type new genre here"></asp:TextBox>
+                        <ag:AddGenre ID="ag1" runat="server" />
                     </EditItemTemplate>
-                    <InsertItemTemplate>
-                        <asp:TextBox ID="editGenreTxtBox" runat="server"></asp:TextBox>                  
-                    </InsertItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="genreLabel" runat="server" Text='<%# Bind("Genre") %>'></asp:Label>
                     </ItemTemplate>
