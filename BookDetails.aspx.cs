@@ -211,4 +211,10 @@ public partial class BookDetails : System.Web.UI.Page
         TextBox newGenreTxtBox = (TextBox)bookDetailsView.FindControl("newGenreTxtBox");
         newGenreTxtBox.Style.Add("display", "block");
     }
+
+    protected void lkbtnGoogleBook_Click(object sender, EventArgs e)
+    {
+        string isbn = (string)bookDetailsView.DataKey.Value;
+        Response.Redirect("GoogleBookSearch.aspx?isbn=" + isbn);
+    }
 }

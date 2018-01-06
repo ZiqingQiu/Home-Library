@@ -105,6 +105,7 @@
                 <%#Eval("Title")%>
             </HeaderTemplate>
         </asp:DetailsView>
+        <asp:LinkButton ID="lkbtnGoogleBook" runat="server" OnClick="lkbtnGoogleBook_Click">Details in Google Book</asp:LinkButton>
     </div>
 </asp:Content>
 
