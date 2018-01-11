@@ -2,7 +2,7 @@
 <%-- COMP229 HomeLibrary Assignment --%>
 <%-- Global.asax 
      1. use Session["CurrrentTheme"] to hold sessionId to persist theme
-     2. use Session["CurrrentViewBook"] to hold current view detail book ISBN--%>
+     2. use Application["CurrentUsers"] to hold total visitors-%>
 
 <%@ Application Language="C#" %>
 
@@ -11,7 +11,7 @@
     void Application_Start(object sender, EventArgs e)
     {
         // Code that runs on application startup
-
+        Application["CurrentUsers"] = 0;
     }
 
     void Application_End(object sender, EventArgs e)
@@ -27,6 +27,10 @@
 
     void Session_Start(object sender, EventArgs e)
     {
+        //Increment current visitors
+        Application.Lock();
+        Application["CurrentUsers"] = System.Convert.ToInt32(Application["CurrentUsers"]) + 1;
+        Application.UnLock();
         // Code that runs when a new session is started
         CheckSessionId();
     }
@@ -37,6 +41,10 @@
         // Note: The Session_End event is raised only when the sessionstate mode
         // is set to InProc in the Web.config file. If session mode is set to StateServer 
         // or SQLServer, the event is not raised.
+        //Decrement current visitors
+        Application.Lock();
+        Application["CurrentUsers"] = System.Convert.ToInt32(Application["CurrentUsers"]) - 1;
+        Application.UnLock();
         Session["CurrrentTheme"] = null;
     }
 
