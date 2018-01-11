@@ -23,6 +23,6 @@ public partial class Home : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        lblTotalVisitors.Text = "Total visits: " + Application["CurrentUsers"] as string;
+        lblTotalVisitors.Text = "Total visitors: " + Application["CurrentUsers"] as string;
     }
 }
